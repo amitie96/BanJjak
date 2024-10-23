@@ -8,17 +8,27 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter @Setter @Entity
+@Getter
+@Setter
+@Entity
 public class SiteUser {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@Column(unique = true)
-	private String username;
-	
+	private Integer user_number;
+
+	@Column (length = 255 ,unique = true)
+	private String user_id;
+
+	@Column (length = 50 ,unique = true)
+	private String nickname;
+
+	@Column(length = 255)
+	private String user_name;
+
 	private String password;
-	
-	@Column(unique = true)
+
+	@Column(length = 100, unique = true)
 	private String email;
+
 }
