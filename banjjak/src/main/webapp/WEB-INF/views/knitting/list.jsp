@@ -105,7 +105,7 @@
     </div>
 
     <div class="options">
-        <a href="write"><img src="icon/pencil.png" alt="펜" width="20"> 나의 도안 공유하기</a>
+        <a href="write"><img src="../resources/images/pencil.png" alt="펜" width="20"> 나의 도안 공유하기</a>
         <span>최신순</span>
         <span>인기순</span>
     </div>
