@@ -4,9 +4,11 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.mysite.banjjak.model.User" alias="user"/>
+		<typeAlias type="com.mysite.banjjak.model.User" alias="crochet"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mybatis/user.xml"/>
+		<mapper resource="mybatis/crochet.xml"/>
 	</mappers>
 </configuration>

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html>
@@ -68,9 +69,8 @@
 
 <jsp:include page="../layouts/header.jsp"/>
 
-<div>
     <h1>글쓰기</h1>
-    <br>
+    <form:form method="post">
     <div class="input-container title">
         <label for="title">제목</label>
         <input type="text" id="title" class="input-block" placeholder="제목을 입력하세요" autofocus required >
@@ -100,8 +100,8 @@
     <div class="submit-button">
         <button type="submit">글쓰기</button>
     </div>
-</div>
-       
+    </form:form>
+
 
 
 
