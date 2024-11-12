@@ -88,8 +88,6 @@
     
 </head>
 <body>
-
-
 <jsp:include page="../layouts/header.jsp"/>
 
 <div class="container">

@@ -57,6 +57,7 @@
 </head>
 <body>
 
+
 <jsp:include page="../layouts/header.jsp"/>
 
 <!-- 내 글 관리 섹션 -->
