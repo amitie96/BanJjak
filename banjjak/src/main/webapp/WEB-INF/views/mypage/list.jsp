@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
 
-    <!-- <style>
+   <style>
         .join {
             text-align: center;
             text-justify: distribute;
@@ -37,12 +37,12 @@
         .category-list li {
             margin-bottom: 5px;
         }
-        ul {
+         .myul {
             list-style-type: none;
             padding: 0;
             text-align: center;
         }
-        ul li {
+        .myulli {
             margin-bottom: 15px;
             display: flex;
             justify-content: center;
@@ -57,7 +57,7 @@
             flex-grow: 1;
             max-width: 250px;
         }
-    </style> -->
+    </style>
 </head>
 <body>
 
@@ -96,20 +96,20 @@
 <div class="join">
     <h1>내 정보 수정</h1>
     <br>
-    <ul>
-        <li>
+    <ul class="myul">
+        <li class="myulli">
             <label for="user_id">아이디 　</label>
             <input type="text" id="user_id" placeholder="5~20자리" size="20" minlength="5" maxlength="20" autofocus required>
         </li>
-        <li>
+        <li class="myulli">
             <label for="user-password">비밀번호 　</label>
             <input type="password" id="user-password" placeholder="8~20자리" minlength="8" maxlength="20" autofocus required>
         </li>
-        <li>
+        <li class="myulli">
             <label for="user-name">이름 　</label>
             <input type="text" id="user-name" placeholder="이름을 입력해주세요" maxlength="15" autofocus required>
         </li>
-        <li>
+        <li class="myulli">
             <label for="nickname">닉네임 　</label>
             <input type="text" id="nickname" placeholder="닉네임을 입력해주세요" maxlength="15" autofocus required>
         </li>
