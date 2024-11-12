@@ -42,6 +42,7 @@ public class RootController {
 		}
 		
 	}
+	
 
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
