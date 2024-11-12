@@ -7,6 +7,7 @@
            <img src="/resources/images/main.png">
         </a>
     </div>
+
     <div class="link">
         <ul>
         <li>
