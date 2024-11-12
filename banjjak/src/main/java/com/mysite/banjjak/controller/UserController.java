@@ -24,7 +24,7 @@ public class UserController {
 	@PostMapping("/join")
 	public String joinForm(User user) {
 		userService.join(user);
-		return "redirect:login";
+		return "redirect:../login";
 	}
 
 }

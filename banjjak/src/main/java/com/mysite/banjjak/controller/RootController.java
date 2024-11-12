@@ -33,7 +33,7 @@ public class RootController {
 	public String login(User user, HttpSession session) {
 		
 		if(user.getUserId().equals("a001") && user.getPassword().equals("1234")) {
-			user.setUsername("ì´ìš°ì •");
+			user.setUsername("ÀÌÇı¼ö");
 			
 			session.setAttribute("user", user);
 			return "redirect:/";
