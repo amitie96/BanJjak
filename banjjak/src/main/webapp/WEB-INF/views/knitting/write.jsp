@@ -5,16 +5,17 @@
 <html>
 <head>
 
-<title>BanJjak</title>
+<title>Knitting write</title>
 	<link rel="stylesheet" href="/resources/css/styles.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
-<!--     <style>
+<style>
     .input-block {
-        width: 100%;
+        width: 100%; /* 모든 입력란의 가로 길이를 100%로 설정 */
         padding: 15px;
-        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: normal;
         box-sizing: border-box;
     }
 
@@ -41,6 +42,23 @@
         box-sizing: border-box;
     }
 
+    /* 글쓰기 버튼 아래 여백 추가 */
+    .input-container button {
+        margin-top: 20px;
+        padding: 15px;
+        font-size: 16px;
+        font-weight: normal;
+        background-color: #FFB3A5;
+        border: none;
+        border-radius: 50px;
+        color: white;
+    }
+
+    /* 제목 입력란 크기 */
+    .input-container.title input {
+        width: 100%; /* 100%로 늘려서 다른 입력란 크기와 맞춤 */
+    }
+
     .writing-block {
         margin-bottom: 20px;
     }
@@ -61,7 +79,9 @@
         box-sizing: border-box;
         resize: none;
     }
-    </style> -->
+</style>
+
+
 </head>
 <body>
 
@@ -73,7 +93,7 @@
     <br>
     <div class="input-container title">
         <label for="title">제목</label>
-        <input type="text" id="title" class="input-block" placeholder="제목을 입력하세요" autofocus required >
+        <input type="text" id="title" class="input-block" placeholder="제목을 입력하세요" autofocus required>
     </div>
 
     <div class="input-container difficulty">
@@ -82,8 +102,6 @@
             <option value="1star">★</option>
             <option value="2star">★★</option>
             <option value="3star">★★★</option>
-            <option value="4star">★★★★</option>
-            <option value="5star">★★★★★</option>
         </select>
     </div>
     
@@ -101,8 +119,6 @@
         <button type="submit">글쓰기</button>
     </div>
 </div>
-       
-
 
 
 <jsp:include page="../layouts/footer.jsp"/>
