@@ -6,4 +6,8 @@ public interface UserService {
 
 	void join(User user);
 
+	User getUserByUsername(String username);
+
+	int updateUser(User user);
+
 }

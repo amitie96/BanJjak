@@ -93,28 +93,30 @@
 <div class="mypage">
     <h1>내 정보 수정</h1>
     <br>
-    <ul>
-        <li>
-            <label for="user_id">아이디</label>
-            <input type="text" id="user_id" placeholder="5~20자리" size="20" minlength="5" maxlength="20" autofocus required>
-        </li>
-        <li>
-            <label for="user-password">비밀번호</label>
-            <input type="password" id="user-password" placeholder="8~20자리" minlength="8" maxlength="20" autofocus required>
-        </li>
-        <li>
-            <label for="user-name">이름</label>
-            <input type="text" id="user-name" placeholder="이름을 입력해주세요" maxlength="15" autofocus required>
-        </li>
-        <li>
-            <label for="nickname">닉네임</label>
-            <input type="text" id="nickname" placeholder="닉네임을 입력해주세요" maxlength="15" autofocus required>
-        </li>
-        <li>
-            <label for="user-mail">이메일</label>
-            <input type="email" id="user-mail" placeholder="이메일을 입력해주세요" maxlength="255" autofocus required>
-        </li>
-    </ul>
+    <!-- 사용자 정보 수정 폼 -->
+    <form action="/mypage/edit" method="POST">
+        <ul>
+            <li>
+                <label for="userid">아이디</label>
+                <input type="text" id="user_id" name="username" value="${user.username}" readonly required>
+            </li>
+            <li>
+                <label for="userpassword">비밀번호</label>
+                <input type="password" id="userpassword" name="password" placeholder="새 비밀번호" minlength="8" maxlength="20">
+            </li>
+            <li>
+                <label for="username">이름</label>
+                <input type="text" id="username" name="name" value="${user.name}" maxlength="15" required>
+            </li>
+            <li>
+                <label for="nickname">닉네임</label>
+                <input type="text" id="nickname" name="nickname" value="${user.nickname}" maxlength="15" required>
+            </li>
+            <li>
+                <label for="user-mail">이메일</label>
+                <input type="email" id="user-mail" name="email" value="${user.email}" maxlength="255" required>
+            </li>
+        </ul>
     <br>
     <p><a href="#">취소</a>　|　<a href="#">수정하기</a></p>
     <br><br><br>
