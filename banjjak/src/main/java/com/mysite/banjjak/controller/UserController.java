@@ -25,6 +25,7 @@ public class UserController {
 	public String joinForm(User user) {
 		userService.join(user);
 		return "redirect:../login";
+		
 	}
 
 }
