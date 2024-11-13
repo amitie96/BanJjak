@@ -1,5 +1,7 @@
 package com.mysite.banjjak.model;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Crochet {
 
 	private int cro_id;
@@ -9,6 +11,8 @@ public class Crochet {
 	private String cro_rate;
 	
 	private String user_id;
+	
+	private MultipartFile crochetImage;
 
 	public int getCro_id() {
 		return cro_id;
@@ -56,6 +60,14 @@ public class Crochet {
 
 	public void setUser_id(String user_id) {
 		this.user_id = user_id;
+	}
+
+	public MultipartFile getCrochetImage() {
+		return crochetImage;
+	}
+
+	public void setCrochetImage(MultipartFile crochetImage) {
+		this.crochetImage = crochetImage;
 	}
 	
 	

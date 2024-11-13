@@ -6,7 +6,7 @@
 <html>
 <head>
 
-<title>BanJjak</title>
+<title>CrochetWrite</title>
 	<link rel="stylesheet" href="/resources/css/styles.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -82,14 +82,12 @@
             <option value="1star">★</option>
             <option value="2star">★★</option>
             <option value="3star">★★★</option>
-            <option value="4star">★★★★</option>
-            <option value="5star">★★★★★</option>
         </select>
     </div>
     
     <div class="input-container attachments">
         <label for="file">첨부파일</label>
-        <input type="file" id="file" class="input-block">
+       <input type="file" id="crochetImage" class="input-block"/>
     </div>
 
     <div class="writing-block">

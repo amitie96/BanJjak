@@ -19,7 +19,7 @@
         </li>
        
         <li>
-            <a href="#">마이페이지</a>
+            <a href="list">마이페이지</a>
         </li>
 
         </ul>
@@ -33,10 +33,7 @@
         <li>
             <a href="/user/join">회원가입</a>
         </li>
-        <li>
-            <a href="#">마이페이지</a>
-        </li>
-
+       
         </ul>
          </c:otherwise>
          </c:choose>

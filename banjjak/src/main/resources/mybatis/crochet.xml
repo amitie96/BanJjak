@@ -5,7 +5,7 @@
 	
 	<insert id="write">
 		INSERT INTO crochet
-		VALUES(#{cro_title}, #{cro_rate}, #{cro_content})
+		VALUES(#{cro_title}, #{cro_rate}, #{cro_image}, #{cro_content})
 		
 	</insert>
 	
