@@ -32,14 +32,20 @@ public class CrochetController {
 	}
 	
 	@PostMapping("/write")
-	public String writting(Crochet crochet, HttpSession session) {
-		String userId = (String) session.getAttribute("userId");
-		MultipartFile crochetImage = crochet.getCrochetImage();
+	public String writting(Crochet crochet, HttpSession session, MultipartFile uploadFile) {
 		
-		String saveName = crochetImage.getOriginalFilename();
-		File saveFile = new File("C:||upload", saveName);
+		if(!uploadFile.isEmpty()) {
+			String filename = uploadFile.getOriginalFilename();
+			
+			try {
+				uploadFile.transferTo(new File("d:/upload/" + filename));
+				
+				crochet.setFilename(filename);
+			} catch (Exception e) {
+				return "redirect:/crochet/write";
+			}
+		}
 		
-		crochetService.write(crochet);
-		return "redirect:../list";
+		return "redirect:/crochet/list";
 	}
 }

@@ -69,7 +69,7 @@
 
 <jsp:include page="../layouts/header.jsp"/>
 
-    <h1>글쓰기</h1>
+   <%--  <h1>글쓰기</h1>
     <form:form method="post">
     <div class="input-container title">
         <label for="title">제목</label>
@@ -83,14 +83,27 @@
             <option value="2star">★★</option>
             <option value="3star">★★★</option>
         </select>
-    </div>
+    </div> --%>
     
     <div class="input-container attachments">
-        <label for="file">첨부파일</label>
-       <input type="file" id="crochetImage" class="input-block"/>
+       <form method="post" action="write" enctype="multipart/form-data">
+			<div>
+				<label for="filename">파일 이름</label>
+				<input type="text" name="title">
+			</div>
+			
+			<div>
+				<input type="file" name="uploadFile">
+			</div>
+			
+			<div>
+				<button type="submit">확인</button>
+			</div>
+		</form>
     </div>
+    
 
-    <div class="writing-block">
+    <%-- <div class="writing-block">
         <label for="content">내용</label>
         <textarea id="content" class="input-block" placeholder="내용을 입력하세요" rows="10"></textarea>
     </div>
@@ -98,7 +111,7 @@
     <div class="submit-button">
         <button type="submit">글쓰기</button>
     </div>
-    </form:form>
+    </form:form> --%>
 
 
 
