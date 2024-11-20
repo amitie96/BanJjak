@@ -90,36 +90,40 @@
 
 <div>
     <h1>글쓰기</h1>
-    <br>
-    <div class="input-container title">
-        <label for="title">제목</label>
-        <input type="text" id="title" class="input-block" placeholder="제목을 입력하세요" autofocus required>
-    </div>
+    <br>    
+    <div>
+    	<div>
+    		<form method="post" action="write" enctype="multipart/form-data">
+				<div>
+				    <label for="knit_title">제목</label>
+				    <input type="text" id="title" name="title"class="input-block" placeholder="제목을 입력하세요" autofocus required>
+				</div>
+				
+				<div>
+				    <label for="knit_rate">난이도</label>
+				    <select id="knit_rate" name="knit_rate" class="input-block">
+				        <option value="1star">★</option>
+				        <option value="2star">★★</option>
+				        <option value="3star">★★★</option>
+				    </select>
+				</div>
+    			
+				<div>
+					<label>첨부파일</label>
+    				<input type="file" name="uploadFile">
+    			</div>
+    			
+				<div>
+					<label for="knit_content">내용</label>
+					<textarea id="knit_content" name="knit_content"class="input-block" placeholder="내용을 입력하세요" rows="10"></textarea>
+    			</div>
 
-    <div class="input-container difficulty">
-        <label for="difficulty">난이도</label>
-        <select id="difficulty" class="input-block">
-            <option value="1star">★</option>
-            <option value="2star">★★</option>
-            <option value="3star">★★★</option>
-        </select>
+    			<div class="submit-button">
+    				<button type="submit">글쓰기</button>
+    			</div>
+    		</form>
+    	</div>
     </div>
-    
-    <div class="input-container attachments">
-        <label for="file">첨부파일</label>
-        <input type="file" id="file" class="input-block">
-    </div>
-
-    <div class="writing-block">
-        <label for="content">내용</label>
-        <textarea id="content" class="input-block" placeholder="내용을 입력하세요" rows="10"></textarea>
-    </div>
-
-    <div class="submit-button">
-        <button type="submit">글쓰기</button>
-    </div>
-</div>
-
 
 <jsp:include page="../layouts/footer.jsp"/>
 </body>
