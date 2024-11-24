@@ -10,7 +10,7 @@
 
     <div class="link">
         <c:choose>
-        <c:when test="${not empty user.userId}">
+        <c:when test="${not empty userInfo.userId}">
         <ul>
         <li>
            <!-- 로그아웃 링크 -->
@@ -19,7 +19,7 @@
         </li>
        
         <li>
-            <a href="list">마이페이지</a>
+            <a href="mypage/list?userId=${userInfo.userId}">마이페이지</a>
         </li>
 
         </ul>

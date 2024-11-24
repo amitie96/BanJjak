@@ -9,5 +9,23 @@
 		VALUES(#{userId}, #{username}, #{nickname}, #{password}, #{email})
 		
 	</insert>
+	
+	<select id="login">
+	
+	</select>
+	
+	<select id="userinfo" parameterType="hashmap" resultType="hashmap">
+		SELECT userId, username, nickname, password, email
+		  FROM USER
+		 WHERE USERID=#{userId};
+	</select>
 
+	<update id="updateUserInfo">
+		UPDATE USER
+		   SET USERNAME = #{username}
+        	  ,PASSWORD = #{password}
+              ,NICKNAME = #{nickname}
+              ,EMAIL = #{email}
+	     WHERE USERID=#{userId};
+	</update>
 </mapper>

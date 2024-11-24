@@ -17,7 +17,11 @@
 
 <jsp:include page="layouts/header.jsp"/>
 
-${user.username}
+${userInfo.userId}
+${userInfo.username}
+${userInfo.nickname}
+${userInfo.password}
+${userInfo.email}
 
 
 <jsp:include page="layouts/footer.jsp"/>

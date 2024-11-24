@@ -94,31 +94,32 @@
     <h1>내 정보 수정</h1>
     <br>
     <!-- 사용자 정보 수정 폼 -->
-    <form action="/mypage/edit" method="POST">
+    <form action="/mypage/list" method="POST">
         <ul>
             <li>
                 <label for="userid">아이디</label>
-                <input type="text" id="user_id" name="username" value="${user.username}" readonly required>
+                <input type="text" id="userId" name="userId" value="${userInfo.userId}" readonly required>
             </li>
             <li>
                 <label for="userpassword">비밀번호</label>
-                <input type="password" id="userpassword" name="password" placeholder="새 비밀번호" minlength="8" maxlength="20">
+                <input type="password" id="userpassword" name="password" placeholder="새 비밀번호" value="${userInfo.password}" minlength="8" maxlength="20">
             </li>
             <li>
                 <label for="username">이름</label>
-                <input type="text" id="username" name="name" value="${user.name}" maxlength="15" required>
+                <input type="text" id="username" name="username" value="${userInfo.username}" maxlength="15" required>
             </li>
             <li>
                 <label for="nickname">닉네임</label>
-                <input type="text" id="nickname" name="nickname" value="${user.nickname}" maxlength="15" required>
+                <input type="text" id="nickname" name="nickname" value="${userInfo.nickname}" maxlength="15" required>
             </li>
+            
             <li>
                 <label for="user-mail">이메일</label>
-                <input type="email" id="user-mail" name="email" value="${user.email}" maxlength="255" required>
+                <input type="email" id="user-mail" name="email" value="${userInfo.email}" maxlength="255" required>
             </li>
         </ul>
     <br>
-    <p><a href="#">취소</a>　|　<a href="#">수정하기</a></p>
+    <p><a href="#">취소</a>　|　<button type="submit">수정하기</button></p>
     <br><br><br>
 </div>
 
