@@ -2,48 +2,53 @@ package com.mysite.banjjak.model;
 
 public class Crochet {
 
-	private int cro_id;
-	private String cro_title;
-	private String cro_content;
-	private String cro_date;
-	private String cro_rate;
+	private int croId;
+	private String croTitle;
+	private String croContent;
+	private String croDate;
+	private String croRate;
 	
 	private String userId;
 	
 	private String filename;
 	private String uuid;
 	
-	public int getCro_id() {
-		return cro_id;
+	public int getCroId() {
+		return croId;
 	}
-	public void setCro_id(int cro_id) {
-		this.cro_id = cro_id;
+	public void setCroId(int croId) {
+		this.croId = croId;
 	}
-	public String getCro_title() {
-		return cro_title;
+	public String getCroTitle() {
+		return croTitle;
 	}
-	public void setCro_title(String cro_title) {
-		this.cro_title = cro_title;
+	public void setCroTitle(String croTitle) {
+		this.croTitle = croTitle;
 	}
-	public String getCro_content() {
-		return cro_content;
+	public String getCroContent() {
+		return croContent;
 	}
-	public void setCro_content(String cro_content) {
-		this.cro_content = cro_content;
+	public void setCroContent(String croContent) {
+		this.croContent = croContent;
 	}
-	public String getCro_date() {
-		return cro_date;
+	public String getCroDate() {
+		return croDate;
 	}
-	public void setCro_date(String cro_date) {
-		this.cro_date = cro_date;
+	public void setCroDate(String croDate) {
+		this.croDate = croDate;
 	}
-	public String getCro_rate() {
-		return cro_rate;
+	public String getCroRate() {
+		return croRate;
 	}
-	public void setCro_rate(String cro_rate) {
-		this.cro_rate = cro_rate;
+	public void setCroRate(String croRate) {
+		this.croRate = croRate;
 	}
-	
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 	public String getFilename() {
 		return filename;
 	}
@@ -56,17 +61,8 @@ public class Crochet {
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
 	}
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
 	
 	
-
-	
-
 	
 	
 }

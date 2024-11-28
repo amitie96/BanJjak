@@ -2,6 +2,7 @@ package com.mysite.banjjak.service;
 
 import java.util.Map;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,14 +27,21 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Map<String, Object> userInfo(String userId) {
-		return userDao.userinfo(userId);
-	}
-
-	@Override
 	public void updateUserInfo(Map<String, Object> userInfo) {
 		userDao.updateUserInfo(userInfo);
 	}
 
+	@Override
+	public boolean login(User userInfo) {
+		User user = userDao.userinfo(userInfo.getUserId());
+		
+		if(user != null && user.getUserId().equals(userInfo.getUserId()) && user.getPassword().equals(userInfo.getPassword()) ) {
+			BeanUtils.copyProperties(user, userInfo);
+			
+			return true;
+		}
+		
+		return false;
+	}
 	
 }

@@ -10,8 +10,8 @@ public interface UserService {
 
 	User getUserByUsername(String username);
 
-	Map<String, Object> userInfo(String userId);
-
 	void updateUserInfo(Map<String, Object> userInfo);
+
+	boolean login(User userInfo);
 
 }

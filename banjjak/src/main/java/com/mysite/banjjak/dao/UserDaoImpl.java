@@ -1,6 +1,5 @@
 package com.mysite.banjjak.dao;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -21,12 +20,8 @@ public class UserDaoImpl implements UserDao {
 	}
 	
 	@Override
-	public Map<String, Object> userinfo(String userId) {
-		 Map<String, Object> userInfo = new HashMap();
-		 
-		 userInfo = sql.selectOne("user.userinfo", userId);
-		 
-		return userInfo;
+	public User userinfo(String userId) {		 
+		return sql.selectOne("user.userinfo", userId);
 	}
 
 	@Override

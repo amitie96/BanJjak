@@ -14,10 +14,9 @@
 	
 	</select>
 	
-	<select id="userinfo" parameterType="hashmap" resultType="hashmap">
-		SELECT userId, username, nickname, password, email
-		  FROM USER
-		 WHERE USERID=#{userId};
+	<select id="userinfo" resultType="User">
+		SELECT * FROM USER
+		WHERE USERID=#{userId};
 	</select>
 
 	<update id="updateUserInfo">

@@ -74,15 +74,15 @@
     <form:form method="post" modelAttribute="write" enctype="multipart/form-data">
     <div class="input-container title">
         <label for="title">제목</label>
-        <input type="text" id="cro_title" name="cro_title" class="input-block" placeholder="제목을 입력하세요" autofocus required >
+        <input type="text" id="cro_title" name="croTitle" class="input-block" placeholder="제목을 입력하세요" autofocus required >
     </div>
 
     <div class="input-container difficulty">
         <label for="difficulty">난이도</label>
-        <select id="cro_rate" name="cro_rate" class="input-block">
-            <option value="1star">★</option>
-            <option value="2star">★★</option>
-            <option value="3star">★★★</option>
+        <select id="cro_rate" name="croRate" class="input-block">
+            <option value="★">★</option>
+            <option value="★★">★★</option>
+            <option value="★★★">★★★</option>
         </select>
     </div>
     
@@ -102,7 +102,7 @@
 
     <div class="writing-block">
         <label for="content">내용</label>
-        <textarea id="cro_content" name="cro_content" class="input-block" placeholder="내용을 입력하세요" rows="10"></textarea>
+        <textarea id="cro_content" name="croContent" class="input-block" placeholder="내용을 입력하세요" rows="10"></textarea>
     </div>
 
     <div class="submit-button">

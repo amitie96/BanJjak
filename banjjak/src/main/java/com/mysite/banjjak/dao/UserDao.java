@@ -8,7 +8,7 @@ public interface UserDao {
 
 	void join(User user);
 
-	Map<String, Object> userinfo(String userId);
+	User userinfo(String userId);
 
 	void updateUserInfo(Map<String, Object> userInfo);
 }

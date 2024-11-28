@@ -102,7 +102,7 @@
             </li>
             <li>
                 <label for="userpassword">비밀번호</label>
-                <input type="password" id="userpassword" name="password" placeholder="새 비밀번호" value="${userInfo.password}" minlength="8" maxlength="20">
+                <input type="password" id="userpassword" name="password" placeholder="새 비밀번호" value="${userInfo.password}">
             </li>
             <li>
                 <label for="username">이름</label>
