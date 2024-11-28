@@ -8,7 +8,7 @@ public class Crochet {
 	private String cro_date;
 	private String cro_rate;
 	
-	private String user_id;
+	private String userId;
 	
 	private String filename;
 	private String uuid;
@@ -43,12 +43,7 @@ public class Crochet {
 	public void setCro_rate(String cro_rate) {
 		this.cro_rate = cro_rate;
 	}
-	public String getUser_id() {
-		return user_id;
-	}
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
-	}
+	
 	public String getFilename() {
 		return filename;
 	}
@@ -61,6 +56,14 @@ public class Crochet {
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
 	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	
+	
 
 	
 

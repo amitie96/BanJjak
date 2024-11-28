@@ -3,9 +3,9 @@
 
 <mapper namespace="crochet">
 	
-	<insert id="write">
+	<insert id="add">
 		INSERT INTO crochet
-		VALUES(#{cro_title}, #{cro_rate}, #{cro_content})
+		VALUES(#{userId}, #{cro_title}, #{cro_rate}, #{cro_content})
 		
 	</insert>
 	

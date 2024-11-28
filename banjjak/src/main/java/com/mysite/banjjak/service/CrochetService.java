@@ -4,6 +4,6 @@ import com.mysite.banjjak.model.Crochet;
 
 public interface CrochetService {
 
-	void write(Crochet crochet);
+	void add(Crochet crochet);
 
 }

@@ -13,8 +13,8 @@ public class CrochetDaoImpl implements CrochetDao {
 	SqlSession sql;
 	
 	@Override
-	public void write(Crochet crochet) {
-		sql.insert("crochet.write", crochet);
+	public void add(Crochet crochet) {
+		sql.insert("crochet.add", crochet);
 
 	}
 

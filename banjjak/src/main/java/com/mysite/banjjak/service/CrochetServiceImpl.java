@@ -13,8 +13,8 @@ public class CrochetServiceImpl implements CrochetService {
 	CrochetDao crochetDao;
 
 	@Override
-	public void write(Crochet crochet) {
-		crochetDao.write(crochet);
+	public void add(Crochet crochet) {
+		crochetDao.add(crochet);
 
 	}
 
