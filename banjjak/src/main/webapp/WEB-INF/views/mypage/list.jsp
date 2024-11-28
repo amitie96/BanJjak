@@ -119,7 +119,7 @@
             </li>
         </ul>
     <br>
-    <p><a href="#">취소</a>　|　<button type="submit">수정하기</button></p>
+    <p>　<button type="submit">수정하기</button></p>
     <br><br><br>
 </div>
 

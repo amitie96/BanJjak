@@ -19,7 +19,7 @@
         </li>
        
         <li>
-            <a href="mypage/list?userId=${userInfo.userId}">마이페이지</a>
+            <a href="mypage/list">마이페이지</a>
         </li>
 
         </ul>

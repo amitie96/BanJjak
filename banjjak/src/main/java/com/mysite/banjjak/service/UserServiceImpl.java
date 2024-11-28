@@ -1,7 +1,5 @@
 package com.mysite.banjjak.service;
 
-import java.util.Map;
-
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,10 +24,12 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 
-	@Override
-	public void updateUserInfo(Map<String, Object> userInfo) {
-		userDao.updateUserInfo(userInfo);
-	}
+	
+	 @Override 
+	 public void updateUserInfo(User userInfo) {
+		 userDao.updateUserInfo(userInfo); 
+	 }
+	 
 
 	@Override
 	public boolean login(User userInfo) {

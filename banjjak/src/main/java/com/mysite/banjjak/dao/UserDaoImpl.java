@@ -1,6 +1,5 @@
 package com.mysite.banjjak.dao;
 
-import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,15 +19,15 @@ public class UserDaoImpl implements UserDao {
 	}
 	
 	@Override
-	public User userinfo(String userId) {		 
+	public User userinfo(String userId) {
 		return sql.selectOne("user.userinfo", userId);
 	}
 
-	@Override
-	public void updateUserInfo(Map<String, Object> userInfo) {
-		
-		sql.update("user.updateUserInfo", userInfo);
-		
-	}
+	
+	 @Override 
+	 public void updateUserInfo(User userInfo) {
+		 sql.update("user.updateUserInfo", userInfo);
+	 }
+	 
 
 }

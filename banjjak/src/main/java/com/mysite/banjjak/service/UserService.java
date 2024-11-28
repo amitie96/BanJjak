@@ -1,6 +1,5 @@
 package com.mysite.banjjak.service;
 
-import java.util.Map;
 
 import com.mysite.banjjak.model.User;
 
@@ -10,7 +9,7 @@ public interface UserService {
 
 	User getUserByUsername(String username);
 
-	void updateUserInfo(Map<String, Object> userInfo);
+	void updateUserInfo(User userInfo);
 
 	boolean login(User userInfo);
 
