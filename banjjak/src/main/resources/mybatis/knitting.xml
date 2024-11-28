@@ -2,12 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="knitting">
-	
-	<insert id="write">
-		
-		INSERT INTO user 
-		VALUES(#{knit_id}, #{knit_title}, #{knit_content}, #{knit_date}, #{knit_rate})
-		
+    
+	<insert id="write" parameterType="com.mysite.banjjak.model.Knitting">
+	    INSERT INTO knitting (knitTitle, knitContent, knitDate, knitRate, userId, filename, uuid)
+	    VALUES (#{knitTitle}, #{knitContent}, #{knitDate}, #{knitRate}, #{userId}, #{filename}, #{uuid})
 	</insert>
 
+    
 </mapper>

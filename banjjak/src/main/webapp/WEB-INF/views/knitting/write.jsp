@@ -95,16 +95,16 @@
     	<div>
     		<form method="post" action="write" enctype="multipart/form-data">
 				<div>
-				    <label for="knit_title">제목</label>
-				    <input type="text" id="title" name="title"class="input-block" placeholder="제목을 입력하세요" autofocus required>
+				    <label for="knitTitle">제목</label>
+				    <input type="text" id="knitTitle" name="knitTitle"class="input-block" placeholder="제목을 입력하세요" autofocus required>
 				</div>
 				
 				<div>
-				    <label for="knit_rate">난이도</label>
-				    <select id="knit_rate" name="knit_rate" class="input-block">
-				        <option value="1star">★</option>
-				        <option value="2star">★★</option>
-				        <option value="3star">★★★</option>
+				    <label for="knitRate">난이도</label>
+				    <select id="knitRate" name="knitRate" class="input-block">
+				        <option value="1">★</option>
+				        <option value="2">★★</option>
+				        <option value="3">★★★</option>
 				    </select>
 				</div>
     			
@@ -114,8 +114,8 @@
     			</div>
     			
 				<div>
-					<label for="knit_content">내용</label>
-					<textarea id="knit_content" name="knit_content"class="input-block" placeholder="내용을 입력하세요" rows="10"></textarea>
+					<label for="knitContent">내용</label>
+					<textarea id="knitContent" name="knitContent"class="input-block" placeholder="내용을 입력하세요" rows="10"></textarea>
     			</div>
 
     			<div class="submit-button">
