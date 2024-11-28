@@ -5,7 +5,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+    .buttonclass {
+    border: none; /* 테두리 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+    background: none; /* 배경 제거 */
+    cursor: pointer; /* 마우스 오버 시 포인터 커서 */
+    }
 
+    .buttonclass img {
+        display: block; /* 이미지 주변 간격 제거 */
+        transition: transform 0.2s ease, filter 0.2s ease; /* 마우스 오버 시 애니메이션 */
+    }
+
+    /* 마우스 오버 시 스타일 */
+    .buttonclass:hover img {
+        transform: scale(1.01); 
+        filter: brightness(1.2); 
+    }
+</style>
 <title>BanJjak</title>
 	<link rel="stylesheet" href="/resources/css/styles.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,10 +48,11 @@
         </div>
         
         <div class="container">
-            <button type="submit" class="button" >
+            <button type="submit" class="buttonclass" >
                 <img src="resources/images/login.png"></a>
             </button>
         </div>
+        <br><br>
     </form>
 </div>               
 
