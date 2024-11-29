@@ -4,5 +4,5 @@ import com.mysite.banjjak.model.Knitting;
 
 public interface KnittingDao {
 
-	void write(Knitting knitting);
+	void add(Knitting knitting);
 }

@@ -3,9 +3,10 @@
 
 <mapper namespace="knitting">
     
-	<insert id="write" parameterType="com.mysite.banjjak.model.Knitting">
-	    INSERT INTO knitting (knitTitle, knitContent, knitDate, knitRate, userId, filename, uuid)
-	    VALUES (#{knitTitle}, #{knitContent}, #{knitDate}, #{knitRate}, #{userId}, #{filename}, #{uuid})
+	<insert id="add">
+		INSERT INTO knitting
+		VALUES(NULL, #{userId}, #{knitTitle}, #{knitContent},#{knitRate}, NOW())
+		
 	</insert>
 
     

@@ -13,7 +13,8 @@ public class KnittingDaoImpl implements KnittingDao {
 	SqlSession sql;
 
 	@Override
-	public void write(Knitting knitting) {
-		sql.insert("knitting.write", knitting);
+	public void add(Knitting knitting) {
+		sql.insert("knitting.add", knitting);
+		
 	}
 }

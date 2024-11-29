@@ -8,12 +8,14 @@
 
 	<typeAliases>
 		<typeAlias type="com.mysite.banjjak.model.User" alias="User"/>
-		<typeAlias type="com.mysite.banjjak.model.Crochet" alias="crochet"/>
+		<typeAlias type="com.mysite.banjjak.model.Crochet" alias="Crochet"/>
+		<typeAlias type="com.mysite.banjjak.model.Knitting" alias="Knitting"/>
 		
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mybatis/user.xml"/>
 		<mapper resource="mybatis/crochet.xml"/>
+		<mapper resource="mybatis/knitting.xml"/>
 	</mappers>
 </configuration>

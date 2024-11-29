@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html>
@@ -88,42 +89,77 @@
 
 <jsp:include page="../layouts/header.jsp"/>
 
-<div>
-    <h1>글쓰기</h1>
-    <br>    
-    <div>
-    	<div>
-    		<form method="post" action="write" enctype="multipart/form-data">
-				<div>
-				    <label for="knitTitle">제목</label>
-				    <input type="text" id="knitTitle" name="knitTitle"class="input-block" placeholder="제목을 입력하세요" autofocus required>
-				</div>
-				
-				<div>
-				    <label for="knitRate">난이도</label>
-				    <select id="knitRate" name="knitRate" class="input-block">
-				        <option value="1">★</option>
-				        <option value="2">★★</option>
-				        <option value="3">★★★</option>
-				    </select>
-				</div>
-    			
-				<div>
-					<label>첨부파일</label>
-    				<input type="file" name="uploadFile">
-    			</div>
-    			
-				<div>
-					<label for="knitContent">내용</label>
-					<textarea id="knitContent" name="knitContent"class="input-block" placeholder="내용을 입력하세요" rows="10"></textarea>
-    			</div>
-
-    			<div class="submit-button">
-    				<button type="submit">글쓰기</button>
-    			</div>
-    		</form>
-    	</div>
+ <%--    <h1>글쓰기</h1>
+  		<form:form method="post" modelAttribute="write" enctype="multipart/form-data">
+			<div>
+			    <label for="knitTitle">제목</label>
+			    <input type="text" id="knitTitle" name="knitTitle" class="input-block" placeholder="제목을 입력하세요" autofocus required>
+			</div>
+			
+			<div>
+			    <label for="knitRate">난이도</label>
+			    <select id="knitRate" name="knitRate" class="input-block">
+			        <option value="★">★</option>
+			        <option value="★★">★★</option>
+			        <option value="★★★">★★★</option>
+			    </select>
+			</div>
+	  			
+			<div>
+				<label>첨부파일</label>
+	  				<input type="file" name="uploadFile">
+	  			</div>
+	  			
+			<div>
+				<label for="content">내용</label>
+				<textarea id="knitContent" name="knitContent" class="input-block" placeholder="내용을 입력하세요" rows="10"></textarea>
+	  			</div>
+	
+	  			<div class="submit-button">
+	  				<button type="submit">글쓰기</button>
+	  			</div>
+  		</form:form> --%>
+  		
+  		   <h1>글쓰기</h1>
+   
+    <form:form method="post" modelAttribute="write" enctype="multipart/form-data">
+    <div class="input-container title">
+        <label for="title">제목</label>
+        <input type="text" id="knitTitle" name="knitTitle" class="input-block" placeholder="제목을 입력하세요" autofocus required >
     </div>
+
+    <div class="input-container difficulty">
+        <label for="difficulty">난이도</label>
+        <select id="knitRate" name="knitRate" class="input-block">
+            <option value="★">★</option>
+            <option value="★★">★★</option>
+            <option value="★★★">★★★</option>
+        </select>
+    </div>
+    
+   <div class="input-container attachments">
+       
+		<div>
+			<label for="filename">파일 이름</label>
+			<input type="text" name="title">
+		</div>
+		<div>
+			<input type="file" name="uploadFile">
+		</div>
+			
+		
+    </div>
+
+    <div class="writing-block">
+        <label for="content">내용</label>
+        <textarea id="knitContent" name="knitContent" class="input-block" placeholder="내용을 입력하세요" rows="10"></textarea>
+    </div>
+
+    <div class="submit-button">
+        <button type="submit">글쓰기</button>
+    </div>
+    </form:form>
+
 
 <jsp:include page="../layouts/footer.jsp"/>
 </body>

@@ -11,10 +11,13 @@ public class KnittingServiceImpl implements KnittingService {
 
 	@Autowired
 	KnittingDao knittingDao;
-	
+
 	@Override
-	public void write(Knitting knitting) {
-		knittingDao.write(knitting);
+	public void add(Knitting knitting) {
+		knittingDao.add(knitting);
+		
 	}
+	
+	
 
 }
