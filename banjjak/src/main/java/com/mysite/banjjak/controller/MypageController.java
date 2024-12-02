@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
+import com.mysite.banjjak.model.Crochet;
+import com.mysite.banjjak.model.Knitting;
 import com.mysite.banjjak.model.User;
 import com.mysite.banjjak.service.UserService;
 
@@ -23,7 +25,7 @@ public class MypageController {
 
 	
 	 @GetMapping("/list") 
-	 public String join(@SessionAttribute("userInfo") User user) {
+	 public String join(@SessionAttribute("userInfo") User user, Knitting knitting, Crochet crochet) {
 	 
 		 return "mypage/list"; 
 	 }

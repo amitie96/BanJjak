@@ -25,22 +25,20 @@
             gap: 40px;
             margin: 20px 0;
         }
-        .category h3 {
-            color: #f9a825;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-        .category-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        .category-list li {
-            margin-bottom: 5px;
-        }
         .mypage ul {
             list-style-type: none;
             padding: 0;
             text-align: center;
+        }
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 2px solid #FFFF99;
+            background-color:  #FFFFE0;
+            padding: 20px;
+            text-align: center;
+            box-sizing: border-box;
+            border-radius: 20px;
         }
         .mypage li {
             margin-bottom: 15px;
@@ -66,26 +64,17 @@
     
     <div class="category">
         <!-- 대바늘 글 목록 -->
-        
         <div>
-            <h3>대바늘 &gt;</h3>
-            <ul class="category-list">
-                <c:forEach var="post" items="${postList}">
-                    <c:if test="${post.category == '대바늘'}">
-                        <li>${post.title}</li>
-                    </c:if>
-                </c:forEach>
+            <label>대바늘</label>
+            <ul class="box">
+             	
             </ul>
         </div>
         <!-- 코바늘 글 목록 -->
         <div>
-            <h3>코바늘 &gt;</h3>
-            <ul class="category-list">
-                <c:forEach var="post" items="${postList}">
-                    <c:if test="${post.category == '코바늘'}">
-                        <li>${post.title}</li>
-                    </c:if>
-                </c:forEach>
+            <label>코바늘</label>
+            <ul class="box">
+             
             </ul>
         </div>
     </div>
