@@ -10,6 +10,6 @@ public interface KnittingService {
 
 	List<Knitting> findAll(Knitting knitting);
 
-	
+	Knitting findById(int knitId);
 
 }

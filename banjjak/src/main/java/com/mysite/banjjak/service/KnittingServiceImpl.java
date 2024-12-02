@@ -25,4 +25,10 @@ public class KnittingServiceImpl implements KnittingService {
 		return knittingDao.findAll(knitting);
 	}
 
+	@Override
+	public Knitting findById(int knitId) {
+		return knittingDao.findById(knitId);
+	}
+
+
 }

@@ -17,12 +17,20 @@ public class KnittingDaoImpl implements KnittingDao {
 	@Override
 	public void add(Knitting knitting) {
 		sql.insert("knitting.add", knitting);
-		
 	}
 
 	@Override
 	public List<Knitting> findAll(Knitting knitting) {
 		return sql.selectList("knitting.list", knitting);
+	}
+
+	@Override
+	public Knitting findById(int knitId) {
+		List<Knitting> knittingList = sql.selectList("knitting.detail", knitId);
+		if(knittingList != null && !knittingList.isEmpty()) {
+			return knittingList.get(0);
+		}
+		return null;
 	}
 
 	

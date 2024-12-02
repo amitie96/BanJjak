@@ -13,4 +13,7 @@
 		SELECT * FROM knitting
 	</select>
     
+    <select id="detail" resultType="knitting">
+    	 SELECT * FROM knitting WHERE knit_id = #{knitId}
+    </select>
 </mapper>

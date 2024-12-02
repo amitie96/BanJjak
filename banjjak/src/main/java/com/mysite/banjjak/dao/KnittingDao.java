@@ -9,6 +9,8 @@ public interface KnittingDao {
 	void add(Knitting knitting);
 
 	List<Knitting> findAll(Knitting knitting);
+
+	Knitting findById(int knitId);
 	
 	
 
