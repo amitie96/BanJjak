@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.mysite.banjjak.dao.CrochetDao;
 import com.mysite.banjjak.model.Crochet;
 import com.mysite.banjjak.model.Knitting;
+import com.mysite.banjjak.model.User;
 
 @Service
 public class CrochetServiceImpl implements CrochetService {
@@ -23,6 +24,11 @@ public class CrochetServiceImpl implements CrochetService {
 	@Override
 	public List<Crochet> findAll(Crochet crochet) {
 		return crochetDao.findAll(crochet);
+	}
+
+	@Override
+	public List<Crochet> myCroList(User user) {
+		return crochetDao.myCroList(user);
 	}
 
 }

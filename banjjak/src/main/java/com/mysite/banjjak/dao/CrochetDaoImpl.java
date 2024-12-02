@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.mysite.banjjak.model.Crochet;
 import com.mysite.banjjak.model.Knitting;
+import com.mysite.banjjak.model.User;
 
 @Repository
 public class CrochetDaoImpl implements CrochetDao {
@@ -25,6 +26,11 @@ public class CrochetDaoImpl implements CrochetDao {
 	@Override
 	public List<Crochet> findAll(Crochet crochet) {
 		return sql.selectList("crochet.list", crochet);
+	}
+
+	@Override
+	public List<Crochet> myCroList(User user) {
+		return sql.selectList("crochet.myCroList", user);
 	}
 
 

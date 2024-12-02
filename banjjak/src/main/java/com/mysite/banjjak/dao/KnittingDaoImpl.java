@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.mysite.banjjak.model.Knitting;
+import com.mysite.banjjak.model.User;
 
 @Repository
 public class KnittingDaoImpl implements KnittingDao {
@@ -32,6 +33,12 @@ public class KnittingDaoImpl implements KnittingDao {
 		}
 		return null;
 	}
+	
+	@Override
+	public List<Knitting> myKnitList(User user) {
+		return sql.selectList("knitting.myKnitList", user);
+	}
+
 
 	
 }

@@ -51,6 +51,9 @@
             text-align: right;
             margin-right: 10px;
         }
+        h3 {
+        	text-align: left;
+        }
     </style> 
 </head>
 <body>
@@ -67,14 +70,18 @@
         <div>
             <label>대바늘</label>
             <ul class="box">
-             	
+             	<c:forEach var="knitting" items="${myKnitList}">
+			        <h3>${knitting.knitTitle}</h3>
+				</c:forEach>
             </ul>
         </div>
         <!-- 코바늘 글 목록 -->
         <div>
             <label>코바늘</label>
             <ul class="box">
-             
+				<c:forEach var="crochet" items="${myCroList}">
+			        <h3>${crochet.croTitle}</h3>
+				</c:forEach>
             </ul>
         </div>
     </div>

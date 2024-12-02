@@ -3,6 +3,7 @@ package com.mysite.banjjak.dao;
 import java.util.List;
 
 import com.mysite.banjjak.model.Knitting;
+import com.mysite.banjjak.model.User;
 
 public interface KnittingDao {
 
@@ -11,7 +12,7 @@ public interface KnittingDao {
 	List<Knitting> findAll(Knitting knitting);
 
 	Knitting findById(int knitId);
-	
-	
 
+	List<Knitting> myKnitList(User user);
+	
 }

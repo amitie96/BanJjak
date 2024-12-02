@@ -1,5 +1,7 @@
 package com.mysite.banjjak.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import com.mysite.banjjak.model.Crochet;
 import com.mysite.banjjak.model.Knitting;
 import com.mysite.banjjak.model.User;
+import com.mysite.banjjak.service.CrochetService;
+import com.mysite.banjjak.service.KnittingService;
 import com.mysite.banjjak.service.UserService;
 
 @Controller
@@ -19,11 +23,23 @@ public class MypageController {
 
     @Autowired
     private UserService userService;  
+    
+    @Autowired
+    private CrochetService crochetService;
+    
+    @Autowired
+    private KnittingService knittingService;
+    
 
 	
 	 @GetMapping("/list") 
-	 public String join(@SessionAttribute("userInfo") User user, Knitting knitting, Crochet crochet) {
-	 
+	 public String join(@SessionAttribute("userInfo") User user, Model model) {
+		 List<Crochet> myCroList = crochetService.myCroList(user);
+		 model.addAttribute("myCroList",myCroList);
+		 
+		 List<Knitting> myKnitList = knittingService.myKnitList(user);
+		 model.addAttribute("myKnitList",myKnitList);
+		 
 		 return "mypage/list"; 
 	 }
 	 
@@ -38,7 +54,4 @@ public class MypageController {
 		 return "mypage/list"; 
 	 }
 		 
-	 
-    
-   
 }

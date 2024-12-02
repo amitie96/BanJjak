@@ -13,4 +13,9 @@
 		WHERE A.USERID = B.USERID
 	</select>
 	
+	<select id="myCroList" resultType="crochet">
+		SELECT CRO_TITLE  FROM crochet
+		WHERE USERID = #{userId}
+	</select>
+	
 </mapper>

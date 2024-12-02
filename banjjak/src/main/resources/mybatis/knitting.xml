@@ -16,4 +16,11 @@
     <select id="detail" resultType="knitting">
     	 SELECT * FROM knitting WHERE knit_id = #{knitId}
     </select>
+    
+    <select id="myKnitList" resultType="knitting">
+		SELECT KNIT_TITLE FROM knitting
+		WHERE USERID = #{userId} 
+	</select>
+    
+    
 </mapper>

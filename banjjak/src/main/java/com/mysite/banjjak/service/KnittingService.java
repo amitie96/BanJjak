@@ -3,6 +3,7 @@ package com.mysite.banjjak.service;
 import java.util.List;
 
 import com.mysite.banjjak.model.Knitting;
+import com.mysite.banjjak.model.User;
 
 public interface KnittingService {
 
@@ -11,5 +12,7 @@ public interface KnittingService {
 	List<Knitting> findAll(Knitting knitting);
 
 	Knitting findById(int knitId);
+	
+	List<Knitting> myKnitList(User user);
 
 }

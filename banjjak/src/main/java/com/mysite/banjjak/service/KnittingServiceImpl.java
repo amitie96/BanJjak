@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.mysite.banjjak.dao.KnittingDao;
 import com.mysite.banjjak.model.Knitting;
+import com.mysite.banjjak.model.User;
 
 @Service
 public class KnittingServiceImpl implements KnittingService {
@@ -28,6 +29,11 @@ public class KnittingServiceImpl implements KnittingService {
 	@Override
 	public Knitting findById(int knitId) {
 		return knittingDao.findById(knitId);
+	}
+
+	@Override
+	public List<Knitting> myKnitList(User user) {
+		return knittingDao.myKnitList(user);
 	}
 
 
