@@ -3,8 +3,6 @@ package com.mysite.banjjak.controller;
 import java.io.File;
 import java.util.UUID;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -50,7 +48,7 @@ public class CrochetController {
 			String uuid = UUID.randomUUID().toString();
 			
 			try {
-				uploadFile.transferTo(new File("d:/crochet/" + uuid + "_"  + filename));
+				uploadFile.transferTo(new File("d:/upload/crochet/" + uuid + "_"  + filename));
 				
 				crochet.setFilename(filename); 
 				crochet.setUuid(uuid);

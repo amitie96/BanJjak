@@ -12,9 +12,8 @@ public class Knitting {
 	
 	private String userId;
 	
-	private String filename;
-	private String uuid;
-	
+	private String knitUuid;
+	private String knitFilename;
 	public int getKnitId() {
 		return knitId;
 	}
@@ -51,18 +50,19 @@ public class Knitting {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public String getFilename() {
-		return filename;
+	public String getKnitUuid() {
+		return knitUuid;
 	}
-	public void setFilename(String filename) {
-		this.filename = filename;
+	public void setKnitUuid(String knitUuid) {
+		this.knitUuid = knitUuid;
 	}
-	public String getUuid() {
-		return uuid;
+	public String getKnitFilename() {
+		return knitFilename;
 	}
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
+	public void setKnitFilename(String knitFilename) {
+		this.knitFilename = knitFilename;
 	}
+	
 
 
 

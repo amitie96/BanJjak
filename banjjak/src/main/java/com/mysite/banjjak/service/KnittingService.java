@@ -8,6 +8,8 @@ public interface KnittingService {
 
 	void add(Knitting knitting);
 
-	List<Knitting> findAll();
+	List<Knitting> findAll(Knitting knitting);
+
+	
 
 }

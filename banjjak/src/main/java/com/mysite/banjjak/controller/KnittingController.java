@@ -30,9 +30,9 @@ public class KnittingController {
 	UserService userService;
 
 	@GetMapping("/list")
-	public String list(Model model) {
-		List<Knitting> KnittingList = knittingService.findAll();
-		model.addAttribute("KnittingList", KnittingList);
+	public String list(Knitting knitting ,Model model) {
+		List<Knitting> knittingList = knittingService.findAll(knitting);
+		model.addAttribute("knittingList", knittingList);
 		
 		return "knitting/list";
 	}
@@ -49,13 +49,13 @@ public class KnittingController {
 		knitting.setUserId(user.getUserId());
 		
 		if(!uploadFile.isEmpty()) {
-			String filename = uploadFile.getOriginalFilename();
-			String uuid = UUID.randomUUID().toString();
+			String knitFilename = uploadFile.getOriginalFilename();
+			String knitUuid = UUID.randomUUID().toString();
 			
 			try {
-				uploadFile.transferTo(new File("D:/knitting/" + uuid + "_" + filename));
-				knitting.setFilename(filename);
-				knitting.setUuid(uuid);
+				uploadFile.transferTo(new File("D:/upload/knitting/" + knitUuid + "_" + knitFilename));
+				knitting.setKnitFilename(knitFilename);
+				knitting.setKnitUuid(knitUuid);
 				
 			} catch (Exception e) {
 				return "redirect:/knitting/write";

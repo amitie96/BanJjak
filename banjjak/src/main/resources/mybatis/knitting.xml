@@ -5,12 +5,12 @@
     
 	<insert id="add">
 		INSERT INTO knitting
-		VALUES(NULL, #{userId}, #{knitTitle}, #{knitContent},#{knitRate}, NOW())
+		VALUES(NULL, #{userId}, #{knitTitle}, #{knitContent},#{knitRate}, NOW(), #{knitUuid}, #{knitFilename})
 		
 	</insert>
 
-	<insert id="findAll">
+	<select id="list" resultType="knitting">
 		SELECT * FROM knitting
-	</insert>
+	</select>
     
 </mapper>

@@ -20,8 +20,10 @@ public class KnittingDaoImpl implements KnittingDao {
 		
 	}
 
-	public static List<Knitting> findAll() {
-		
-		return null;
+	@Override
+	public List<Knitting> findAll(Knitting knitting) {
+		return sql.selectList("knitting.list", knitting);
 	}
+
+	
 }

@@ -13,7 +13,6 @@
     
 <style>
 
-
 	.container {
 	         padding: 30px 0;
      }
@@ -103,6 +102,7 @@
          font-size: 14px;
          color: #f5a623;
      }
+     
 </style>
     
 </head>
@@ -113,7 +113,7 @@
 
 <div class="container">
 
-    <img src="../resources/images/knitting.png" alt="대바늘" width="350" height="140">
+    <img src="../resources/images/knitting.png" alt="대바늘" width="250" height="100">
    
 </div>
 
@@ -122,27 +122,25 @@
         <button>&#128269;</button>
     </div>
 
-<div class="options">
-    <a href="write" class="share-option"><img src="../resources/images/pencil.png" alt="펜" width="20"> 나의 도안 공유하기</a>
-    <div class="sort-options">
-        <a href="?sort=latest">최신순</a>
-        <a href="?sort=popular">인기순</a>
-    </div>
-</div>
+	<div class="options">
+	    <a href="write" class="share-option"><img src="../resources/images/pencil.png" width="20"> 나의 도안 공유하기</a>
+	    <div class="sort-options">
+	        <a href="?sort=latest">최신순</a>
+	        <a href="?sort=popular">인기순</a>
+	    </div>
+	</div>
 
-   <div class="gallery">
-        <!-- DB에서 불러온 이미지 목록 반복 -->
-        <c:forEach var="image" items="${imageList}">
-            <div class="gallery-item">
-                <img src="${image.url}" alt="${image.altText}">
-                <h3>${image.title}</h3>
-                <div class="info">댓글 수: ${image.commentsCount}</div>
-                <div class="icons">
-                    ❤️ ${image.likes} 👍 ${image.thumbsUp}
-                </div>
-            </div>
-        </c:forEach>
-    </div>
+	<div>
+	<c:forEach var="knitting" items="${knittingList}">
+	    <div>
+	    	<img src="/upload/knitting/${knitting.knitUuid}_${knitting.knitFilename}">
+	        <h3>${knitting.knitTitle}</h3>
+	        <div class="info">작성자: ${knitting.userId}</div>
+	        <div class="icons">난이도: ${knitting.knitRate}</div>
+	    </div>
+	</c:forEach>
+	</div>
+	    
 <jsp:include page="../layouts/footer.jsp"/>
 </body>
 </html>
