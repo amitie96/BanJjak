@@ -63,8 +63,10 @@
 <!-- 내 글 관리 섹션 -->
 <div class="manage-section">
     <h1>내 글 관리</h1>
+    
     <div class="category">
         <!-- 대바늘 글 목록 -->
+        
         <div>
             <h3>대바늘 &gt;</h3>
             <ul class="category-list">

@@ -23,13 +23,6 @@
 <a href="knitting/list">knitting</a>
 
 
-${userInfo.userId}
-${userInfo.username}
-${userInfo.nickname}
-${userInfo.password}
-${userInfo.email}
-
-
 <jsp:include page="layouts/footer.jsp"/>
 </body>
 </html>
