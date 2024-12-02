@@ -46,30 +46,6 @@ public class RootController {
 	    }
 	}
 
-
-	/*
-	 * @PostMapping("/login") public String login(@SessionAttribute("userInfo") User
-	 * user, HttpSession session) {
-	 * 
-	 * 
-	 * if(user.getUserId().equals(login.get("userId")) &&
-	 * user.getPassword().equals(login.get("password"))) { Map<String, Object>
-	 * userInfo = userService.userInfo(String.valueOf(login.get("userId")));
-	 * 
-	 * session.setAttribute("userInfo", userInfo); return "redirect:/"; } else {
-	 * return "redirect:/login?error=true"; }
-	 * 
-	 * 
-	 * 
-	 * if(user.getUserId().equals(user.get("userId")) &&
-	 * user.getPassword().equals(user.get("password"))) {
-	 * 
-	 * session.setAttribute("user", user); return "redirect:/"; } else {
-	 * 
-	 * return "redirect:/login?error=true"; }
-	 */
-		 
-
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();

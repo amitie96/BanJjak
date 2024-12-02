@@ -1,10 +1,13 @@
 package com.mysite.banjjak.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mysite.banjjak.dao.CrochetDao;
 import com.mysite.banjjak.model.Crochet;
+import com.mysite.banjjak.model.Knitting;
 
 @Service
 public class CrochetServiceImpl implements CrochetService {
@@ -15,7 +18,11 @@ public class CrochetServiceImpl implements CrochetService {
 	@Override
 	public void add(Crochet crochet) {
 		crochetDao.add(crochet);
-
+	}
+	
+	@Override
+	public List<Crochet> findAll(Crochet crochet) {
+		return crochetDao.findAll(crochet);
 	}
 
 }

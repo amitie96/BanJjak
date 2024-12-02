@@ -1,6 +1,8 @@
 package com.mysite.banjjak.controller;
 
 import java.io.File;
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +30,9 @@ public class CrochetController {
 	UserService userService;
 
 	@GetMapping("/list")
-	public String list() {
+	public String list(Crochet crochet, Model model) {
+		List<Crochet> crochetList = crochetService.findAll(crochet);
+		model.addAttribute("crochetList", crochetList);
 		
 		return "crochet/list";
 	}
@@ -44,14 +48,14 @@ public class CrochetController {
 		crochet.setUserId(user.getUserId());
 		
 		if(!uploadFile.isEmpty()) {
-			String filename = uploadFile.getOriginalFilename();
-			String uuid = UUID.randomUUID().toString();
+			String croFilename = uploadFile.getOriginalFilename();
+			String croUuid = UUID.randomUUID().toString();
 			
 			try {
-				uploadFile.transferTo(new File("d:/upload/crochet/" + uuid + "_"  + filename));
+				uploadFile.transferTo(new File("d:/upload/crochet/" + croUuid + "_"  + croFilename));
 				
-				crochet.setFilename(filename); 
-				crochet.setUuid(uuid);
+				crochet.setCroFilename(croFilename); 
+				crochet.setCroUuid(croUuid);
 			} catch (Exception e) {
 				return "redirect:/crochet/write";
 			}

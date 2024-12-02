@@ -28,15 +28,15 @@ public class MypageController {
 	 }
 	 
 		
-		 @PostMapping("/list") 
-		 public String updateUserInfo(User userInfo, Model model) {
+	 @PostMapping("/list") 
+	 public String updateUserInfo(User userInfo, Model model) {
+	 
+		 userService.updateUserInfo(userInfo);
 		 
-			 userService.updateUserInfo(userInfo);
-			 
-			 model.addAttribute("userInfo", userInfo);
-			 
-			 return "mypage/list"; 
-		 }
+		 model.addAttribute("userInfo", userInfo);
+		 
+		 return "mypage/list"; 
+	 }
 		 
 	 
     

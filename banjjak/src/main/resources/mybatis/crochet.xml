@@ -5,8 +5,12 @@
 
 	<insert id="add">
 		INSERT INTO crochet
-		VALUES(NULL, #{userId}, #{croTitle}, #{croContent},#{croRate}, NOW())
-		
+		VALUES(NULL, #{userId}, #{croTitle}, #{croContent},#{croRate}, NOW(),#{croUuid}, #{croFilename})
 	</insert>
+	
+	<select id="list" resultType="crochet">
+		SELECT A.*, B.nickname  FROM crochet A, user B 
+		WHERE A.USERID = B.USERID
+	</select>
 	
 </mapper>

@@ -9,10 +9,10 @@ public class Crochet {
 	private String croRate;
 	
 	private String userId;
+	private String nickname;
 	
-	private String filename;
-	private String uuid;
-	
+	private String croFilename;
+	private String croUuid;
 	public int getCroId() {
 		return croId;
 	}
@@ -49,20 +49,24 @@ public class Crochet {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public String getFilename() {
-		return filename;
+	public String getCroFilename() {
+		return croFilename;
 	}
-	public void setFilename(String filename) {
-		this.filename = filename;
+	public void setCroFilename(String croFilename) {
+		this.croFilename = croFilename;
 	}
-	public String getUuid() {
-		return uuid;
+	public String getCroUuid() {
+		return croUuid;
 	}
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
+	public void setCroUuid(String croUuid) {
+		this.croUuid = croUuid;
 	}
 	
-	
-	
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
 	
 }

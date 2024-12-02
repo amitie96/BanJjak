@@ -130,19 +130,17 @@
     </div>
 </div>
 
-   <div class="gallery">
-        <!-- DB에서 불러온 이미지 목록 반복 -->
-        <c:forEach var="image" items="${imageList}">
-            <div class="gallery-item">
-                <img src="${image.url}" alt="${image.altText}">
-                <h3>${image.title}</h3>
-                <div class="info">댓글 수: ${image.commentsCount}</div>
-                <div class="icons">
-                    ❤️ ${image.likes} 👍 ${image.thumbsUp}
-                </div>
-            </div>
-        </c:forEach>
-    </div>
+   <div>
+	<c:forEach var="crochet" items="${crochetList}">
+	    <div>
+	    	<img src="/upload/crochet/${crochet.croUuid}_${crochet.croFilename}">
+	        <h3>${crochet.croTitle}</h3>
+	        <div class="info">${crochet.nickname}</div>
+	        <div class="icons">난이도: ${crochet.croRate}</div>
+	    </div>
+	</c:forEach>
+	</div>
+	
 <jsp:include page="../layouts/footer.jsp"/>
 </body>
 </html>
