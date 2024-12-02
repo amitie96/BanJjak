@@ -1,6 +1,7 @@
 package com.mysite.banjjak.controller;
 
 import java.io.File;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,10 @@ public class KnittingController {
 	UserService userService;
 
 	@GetMapping("/list")
-	public String list() {
+	public String list(Model model) {
+		List<Knitting> KnittingList = knittingService.findAll();
+		model.addAttribute("KnittingList", KnittingList);
+		
 		return "knitting/list";
 	}
 	

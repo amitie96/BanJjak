@@ -1,5 +1,7 @@
 package com.mysite.banjjak.model;
 
+import java.util.List;
+
 public class Knitting {
 
 	private int knitId;
@@ -61,7 +63,7 @@ public class Knitting {
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
 	}
-	
+
 
 
 	

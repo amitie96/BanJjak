@@ -9,5 +9,8 @@
 		
 	</insert>
 
+	<insert id="findAll">
+		SELECT * FROM knitting
+	</insert>
     
 </mapper>

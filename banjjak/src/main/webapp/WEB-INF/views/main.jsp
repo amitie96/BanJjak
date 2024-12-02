@@ -17,6 +17,12 @@
 
 <jsp:include page="layouts/header.jsp"/>
 
+
+<a href="crochet/list">crochet</a>
+<br><br><br><br><br>
+<a href="knitting/list">knitting</a>
+
+
 ${userInfo.userId}
 ${userInfo.username}
 ${userInfo.nickname}
