@@ -161,7 +161,7 @@
                 <a href="/knitting/detail/${knitting.knitId}">
                     <img src="/upload/knitting/${knitting.knitUuid}_${knitting.knitFilename}">
                     <h3>${knitting.knitTitle}</h3>
-                    <div class="info">작성자 ${knitting.userId}</div>
+                    <div class="info">작성자 ${knitting.nickname}</div>
                     <div class="icons">난이도 ${knitting.knitRate}</div>
                 </a>
             </div>

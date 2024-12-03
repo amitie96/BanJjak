@@ -10,7 +10,8 @@
 	</insert>
 
 	<select id="list" resultType="knitting">
-		SELECT * FROM knitting
+		SELECT A.*, B.nickname  FROM knitting A, user B 
+		WHERE A.USERID = B.USERID
 	</select>
     
     <select id="detail" resultType="knitting">

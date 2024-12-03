@@ -140,10 +140,6 @@
    <div class="input-container attachments">
        
 		<div>
-			<label for="filename">파일 이름</label>
-			<input type="text" name="title">
-		</div>
-		<div>
 			<input type="file" name="uploadFile">
 		</div>
 			

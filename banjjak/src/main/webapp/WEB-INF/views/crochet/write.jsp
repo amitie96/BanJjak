@@ -11,11 +11,12 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
-<!--     <style>
-    .input-block {
-        width: 100%;
+<style>
+ .input-block {
+        width: 100%; /* 모든 입력란의 가로 길이를 100%로 설정 */
         padding: 15px;
-        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: normal;
         box-sizing: border-box;
     }
 
@@ -42,6 +43,23 @@
         box-sizing: border-box;
     }
 
+    /* 글쓰기 버튼 아래 여백 추가 */
+    .input-container button {
+        margin-top: 20px;
+        padding: 15px;
+        font-size: 16px;
+        font-weight: normal;
+        background-color: #FFB3A5;
+        border: none;
+        border-radius: 50px;
+        color: white;
+    }
+
+    /* 제목 입력란 크기 */
+    .input-container.title input {
+        width: 100%; /* 100%로 늘려서 다른 입력란 크기와 맞춤 */
+    }
+
     .writing-block {
         margin-bottom: 20px;
     }
@@ -62,7 +80,7 @@
         box-sizing: border-box;
         resize: none;
     }
-    </style> -->
+    </style>
 </head>
 <body>
 
@@ -88,10 +106,6 @@
     
     <div class="input-container attachments">
        
-		<div>
-			<label for="filename">파일 이름</label>
-			<input type="text" name="title">
-		</div>
 		<div>
 			<input type="file" name="uploadFile">
 		</div>

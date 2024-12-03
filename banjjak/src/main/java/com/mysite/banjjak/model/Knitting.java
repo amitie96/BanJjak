@@ -9,6 +9,7 @@ public class Knitting {
 	private String knitRate;
 	
 	private String userId;
+	private String nickname;
 	
 	private String knitUuid;
 	private String knitFilename;
@@ -60,6 +61,13 @@ public class Knitting {
 	public void setKnitFilename(String knitFilename) {
 		this.knitFilename = knitFilename;
 	}
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	
 	
 
 
