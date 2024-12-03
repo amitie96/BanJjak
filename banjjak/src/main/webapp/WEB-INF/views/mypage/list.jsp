@@ -11,80 +11,139 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
 
 <style>
-      .mypage {
+        .mypage {
             text-align: center;
-            text-justify: distribute;
+            margin-top: 20px;
         }
+
         .manage-section {
             text-align: center;
             margin: 20px 0;
         }
+
         .category {
             display: flex;
             justify-content: center;
             gap: 40px;
             margin: 20px 0;
         }
+
         .mypage ul {
             list-style-type: none;
             padding: 0;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+
         .box {
             width: 300px;
             height: 200px;
             border: 2px solid #FFFF99;
-            background-color:  #FFFFE0;
+            background-color: #FFFFE0;
             padding: 20px;
             text-align: center;
             box-sizing: border-box;
             border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
         }
+
         .mypage li {
             margin-bottom: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        label {
-            width: 150px;
-            text-align: right;
-            margin-right: 10px;
+
+        .mypage a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 18px;
         }
-        h3 {
-        	text-align: left;
+
+        .mypage a:hover {
+            text-decoration: underline;
         }
-    </style> 
+
+        .pagination {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .pagination a {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .pagination a:hover {
+            background-color: #45a049;
+        }
+
+        .pagination .disabled {
+            background-color: #ddd;
+            color: #aaa;
+        }
+    </style>
 </head>
 <body>
-
 
 <jsp:include page="../layouts/header.jsp"/>
 
 <!-- 내 글 관리 섹션 -->
 <div class="manage-section">
     <h1>내 글 관리</h1>
-    
+
     <div class="category">
         <!-- 대바늘 글 목록 -->
         <div>
             <label>대바늘</label>
             <ul class="box">
-             	<c:forEach var="knitting" items="${myKnitList}">
-			        <h3>${knitting.knitTitle}</h3>
-				</c:forEach>
+                <c:forEach var="knitting" items="${myKnitList}">
+                    <li><a href="../knitting/detail.jsp?knitId=${knitting.knitId}">${knitting.knitTitle}</a></li>
+                </c:forEach>
             </ul>
         </div>
+
         <!-- 코바늘 글 목록 -->
         <div>
             <label>코바늘</label>
             <ul class="box">
-				<c:forEach var="crochet" items="${myCroList}">
-			        <h3>${crochet.croTitle}</h3>
-				</c:forEach>
+                <c:forEach var="crochet" items="${myCroList}">
+                    <li><a href="Detail.jsp?crochetId=${crochet.croId}">${crochet.croTitle}</a></li>
+                </c:forEach>
             </ul>
         </div>
     </div>
+
+    <!-- 페이징 처리 -->
+    <div class="pagination">
+        <!-- 이전 페이지 -->
+        <c:if test="${currentPage > 1}">
+            <a href="?page=${currentPage - 1}">&lt; 이전</a>
+        </c:if>
+
+        <!-- 페이지 번호 -->
+        <c:forEach var="pageNum" begin="1" end="${totalPages}">
+            <a href="?page=${pageNum}" class="${pageNum == currentPage ? 'disabled' : ''}">${pageNum}</a>
+        </c:forEach>
+
+        <!-- 다음 페이지 -->
+        <c:if test="${currentPage < totalPages}">
+            <a href="?page=${currentPage + 1}">다음 &gt;</a>
+        </c:if>
+    </div>
+
 </div>
 
 <!-- 내 정보 수정 섹션 -->
