@@ -15,18 +15,18 @@
 <body>
 
     <jsp:include page="../layouts/header.jsp"/>
-
-  	<p><strong>글 번호:</strong> ${knitting.knitId}</p>
-
+   
+    <img src="/upload/knitting/${knitting.knitUuid}_${knitting.knitFilename}">
+    
     <p><strong>제목:</strong> ${knitting.knitTitle}</p>
 
     <p><strong>난이도:</strong> ${knitting.knitRate}</p>
 
-    <p><strong>작성자:</strong> ${knitting.userId}</p>
+    <p><strong>작성자:</strong> ${knitting.nickname}</p>
 
     <p><strong>작성 시간:</strong> ${knitting.knitDate}</p>
     
-    <img src="/upload/knitting/${knitting.knitUuid}_${knitting.knitFilename}">
+  	<p>${knitting.knitContent}</p>
 
     <jsp:include page="../layouts/footer.jsp"/>
 

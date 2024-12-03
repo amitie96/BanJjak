@@ -70,15 +70,19 @@ public class KnittingController {
 	
 	@GetMapping("/detail/{knitId}")
 	public String detail(@PathVariable int knitId, Model model) {
-	    Knitting knitting = knittingService.findById(knitId);
+		
+		Knitting knitting = knittingService.findById(knitId);
 	    
 	    if(knitting == null) {
 	    	return "redirect:/knitting/list";
 	    }
 	    
-	    model.addAttribute("knitting", knitting);
+		model.addAttribute("knitting", knitting);
+	    
 	    return "knitting/detail"; 
 	}
+	
+	
 	
 }
 

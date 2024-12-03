@@ -30,4 +30,9 @@ public class CrochetServiceImpl implements CrochetService {
 		return crochetDao.myCroList(user);
 	}
 
+	@Override
+	public Crochet findById(int croId) {
+		return crochetDao.findById(croId);
+	}
+
 }

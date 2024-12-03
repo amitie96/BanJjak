@@ -12,4 +12,6 @@ public interface CrochetDao {
 
 	List<Crochet> myCroList(User user);
 
+	Crochet findById(int croId);
+
 }

@@ -5,7 +5,7 @@
 <html>
 <head>
 
-<title>Knitting</title>
+<title>Crochet</title>
 	<link rel="stylesheet" href="/resources/css/styles.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -147,7 +147,7 @@
 </div>
 
 <div class="search-bar">
-        <input type="text" placeholder="검색어를 입력하세요">
+        <input type="text" placeholder="제목을 입력하세요">
         <button>&#128269;</button>
     </div>
 
@@ -162,10 +162,12 @@
    <div class="gallery">
 	<c:forEach var="crochet" items="${crochetList}">
 	    <div class="gallery-item">
+	    <a href="/crochet/detail/${crochet.croId}">
 	    	<img src="/upload/crochet/${crochet.croUuid}_${crochet.croFilename}">
 	        <h3>${crochet.croTitle}</h3>
 	        <div class="info">${crochet.nickname}</div>
 	        <div class="icons">난이도: ${crochet.croRate}</div>
+	       </a>
 	    </div>
 	</c:forEach>
 	</div>

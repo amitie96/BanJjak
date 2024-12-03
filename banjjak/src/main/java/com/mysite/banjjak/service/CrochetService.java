@@ -13,4 +13,6 @@ public interface CrochetService {
 
 	List<Crochet> myCroList(User user);
 
+	Crochet findById(int croId);
+
 }

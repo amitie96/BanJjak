@@ -15,7 +15,8 @@
 	</select>
     
     <select id="detail" resultType="knitting">
-    	 SELECT * FROM knitting WHERE knit_id = #{knitId}
+    	 SELECT A.*, B.nickname  FROM knitting A, user B 
+		WHERE A.USERID = B.USERID
     </select>
     
     <select id="myKnitList" resultType="knitting">

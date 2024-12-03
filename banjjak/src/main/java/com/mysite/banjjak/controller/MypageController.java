@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.mysite.banjjak.model.Crochet;
@@ -31,6 +32,17 @@ public class MypageController {
     @Autowired
     private KnittingService knittingService;
     
+    @ResponseBody
+    @GetMapping("/list/crochet/{page}")
+    public List<Crochet> listCro(@SessionAttribute("userInfo") User user, @PathVariable int page) {
+    	return crochetService.myCroList(user);
+    }
+    
+    @ResponseBody
+    @GetMapping("/list/knitting/{page}")
+    public List<Knitting> listKinit(@SessionAttribute("userInfo") User user, @PathVariable int page) {
+    	return knittingService.myKnitList(user);
+    }
 
 	
 	 @GetMapping("/list") 
