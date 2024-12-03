@@ -1,7 +1,5 @@
 package com.mysite.banjjak.model;
 
-import java.util.List;
-
 public class Knitting {
 
 	private int knitId;

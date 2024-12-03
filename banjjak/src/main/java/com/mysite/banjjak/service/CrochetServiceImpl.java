@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.mysite.banjjak.dao.CrochetDao;
 import com.mysite.banjjak.model.Crochet;
-import com.mysite.banjjak.model.Knitting;
 import com.mysite.banjjak.model.User;
 
 @Service
