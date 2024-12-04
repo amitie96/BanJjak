@@ -13,7 +13,7 @@ public interface CrochetService {
 
 	List<Crochet> myCroList(User user);
 
-	Crochet findById(String croId);
+	Crochet findById(int croId);
 
 	void update(Crochet crochet);
 

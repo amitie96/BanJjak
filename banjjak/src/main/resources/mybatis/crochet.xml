@@ -21,6 +21,7 @@
 	 <select id="detail" resultType="crochet">
     	 SELECT A.*, B.nickname  FROM crochet A, user B 
 		WHERE A.USERID = B.USERID
+		 AND A.CRO_ID = #{croId}
     </select>
     
     <update id="update">

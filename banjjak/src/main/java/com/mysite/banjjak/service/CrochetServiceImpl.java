@@ -31,7 +31,7 @@ public class CrochetServiceImpl implements CrochetService {
 	}
 
 	@Override
-	public Crochet findById(String croId) {
+	public Crochet findById(int croId) {
 		return crochetDao.findById(croId);
 	}
 

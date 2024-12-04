@@ -69,7 +69,7 @@ public class CrochetController {
 	}
 	
 	@GetMapping("/detail")
-	public String detail(@RequestParam("croId") String croId, Model model) {
+	public String detail(@RequestParam("croId") int croId, Model model) {
 		
 		Crochet crochet = crochetService.findById(croId);
 		
@@ -84,7 +84,7 @@ public class CrochetController {
 	}
 	
 	@GetMapping("/edit")
-	public String edit(@SessionAttribute("userInfo") User user,@RequestParam("croId") String croId, Model model, Crochet crochet) {
+	public String edit(@SessionAttribute("userInfo") User user,@RequestParam("croId") int croId, Model model, Crochet crochet) {
 		Crochet edit = crochetService.findById(croId);
 		model.addAttribute("crochet", edit);
 		
@@ -92,7 +92,7 @@ public class CrochetController {
 	}
 	
 	@PostMapping("/edit")
-	public String update(@SessionAttribute("userInfo") User user, @RequestParam("croId") String croId, Crochet crochet, MultipartFile uploadFile, Model model) {
+	public String update(@SessionAttribute("userInfo") User user, @RequestParam("croId") int croId, Crochet crochet, MultipartFile uploadFile, Model model) {
 		Crochet edit = crochetService.findById(croId);
 		model.addAttribute("crochet", edit);
 		
@@ -115,7 +115,7 @@ public class CrochetController {
 	}
 	
 	@GetMapping("/delete")
-	public String delete(@SessionAttribute("userInfo") User user, @RequestParam("croId") String croId, Crochet crochet, MultipartFile uploadFile, Model model) {
+	public String delete(@SessionAttribute("userInfo") User user, @RequestParam("croId") int croId, Crochet crochet, MultipartFile uploadFile, Model model) {
 		Crochet edit = crochetService.findById(croId); 
 		model.addAttribute("crochet", edit);
 		
