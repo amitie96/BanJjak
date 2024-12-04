@@ -36,5 +36,19 @@ public class KnittingServiceImpl implements KnittingService {
 		return knittingDao.myKnitList(user);
 	}
 
+	@Override
+	public void update(Knitting knitting) {
+		knittingDao.update(knitting);
+		
+	}
+
+	@Override
+	public void delete(Knitting knitting) {
+		knittingDao.delete(knitting);
+		
+	}
+
+
+
 
 }

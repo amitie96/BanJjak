@@ -33,12 +33,23 @@ public class CrochetDaoImpl implements CrochetDao {
 	}
 
 	@Override
-	public Crochet findById(int croId) {
+	public Crochet findById(String croId) {
 		List<Crochet> crochetList = sql.selectList("crochet.detail", croId);
 		if(crochetList != null && !crochetList.isEmpty()) {
 			return crochetList.get(0);
 		}
 		return null;
+	}
+
+	@Override
+	public void update(Crochet crochet) {
+		sql.update("crochet.update", crochet);
+		
+	}
+
+	@Override
+	public void delete(Crochet crochet) {
+		sql.delete("crochet.delete", crochet);
 	}
 
 

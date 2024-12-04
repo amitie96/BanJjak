@@ -15,4 +15,8 @@ public interface KnittingService {
 	
 	List<Knitting> myKnitList(User user);
 
+	void update(Knitting knitting);
+
+	void delete(Knitting knitting);
+
 }

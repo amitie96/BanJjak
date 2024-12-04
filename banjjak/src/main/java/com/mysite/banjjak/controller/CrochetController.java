@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.mysite.banjjak.model.Crochet;
+import com.mysite.banjjak.model.Knitting;
 import com.mysite.banjjak.model.User;
 import com.mysite.banjjak.service.CrochetService;
 import com.mysite.banjjak.service.UserService;
@@ -66,8 +68,8 @@ public class CrochetController {
 		return "redirect:/crochet/list";
 	}
 	
-	@GetMapping("/detail/{croId}")
-	public String detail(@PathVariable int croId, Model model) {
+	@GetMapping("/detail")
+	public String detail(@RequestParam("croId") String croId, Model model) {
 		
 		Crochet crochet = crochetService.findById(croId);
 		
@@ -79,5 +81,46 @@ public class CrochetController {
 		
 		
 		return "crochet/detail";
+	}
+	
+	@GetMapping("/edit")
+	public String edit(@SessionAttribute("userInfo") User user,@RequestParam("croId") String croId, Model model, Crochet crochet) {
+		Crochet edit = crochetService.findById(croId);
+		model.addAttribute("crochet", edit);
+		
+		return "crochet/edit";
+	}
+	
+	@PostMapping("/edit")
+	public String update(@SessionAttribute("userInfo") User user, @RequestParam("croId") String croId, Crochet crochet, MultipartFile uploadFile, Model model) {
+		Crochet edit = crochetService.findById(croId);
+		model.addAttribute("crochet", edit);
+		
+		if(!uploadFile.isEmpty()) {
+			String croFilename = uploadFile.getOriginalFilename();
+			String croUuid = UUID.randomUUID().toString();
+			
+			try {
+				uploadFile.transferTo(new File("D:/upload/crochet/" + croUuid + "_" + croFilename));
+				crochet.setCroFilename(croFilename);
+				crochet.setCroUuid(croUuid);
+				
+			} catch (Exception e) {
+				return "redirect:/crochet/edit/{croId}";
+			}
+		}
+		crochetService.update(crochet);
+		
+		return "redirect:/mypage/list"; 
+	}
+	
+	@GetMapping("/delete")
+	public String delete(@SessionAttribute("userInfo") User user, @RequestParam("croId") String croId, Crochet crochet, MultipartFile uploadFile, Model model) {
+		Crochet edit = crochetService.findById(croId); 
+		model.addAttribute("crochet", edit);
+		
+		crochetService.delete(crochet);
+		
+		return "redirect:/mypage/list";
 	}
 }

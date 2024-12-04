@@ -14,5 +14,9 @@ public interface KnittingDao {
 	Knitting findById(int knitId);
 
 	List<Knitting> myKnitList(User user);
+
+	void update(Knitting knitting);
+
+	void delete(Knitting knitting);
 	
 }

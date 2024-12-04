@@ -14,7 +14,7 @@
 	</select>
 	
 	<select id="myCroList" resultType="crochet">
-		SELECT CRO_TITLE  FROM crochet
+		SELECT CRO_TITLE, CRO_ID  FROM crochet
 		WHERE USERID = #{userId}
 	</select>
 	
@@ -22,5 +22,20 @@
     	 SELECT A.*, B.nickname  FROM crochet A, user B 
 		WHERE A.USERID = B.USERID
     </select>
+    
+    <update id="update">
+    	UPDATE crochet
+		   SET 	cro_title = #{croTitle}
+        	  , cro_content = #{croContent}
+              , cro_rate = #{croRate}
+              , cro_uuid = #{croUuid}
+              , cro_filename = #{croFilename}
+	     WHERE cro_id=#{croId};
+    </update>
+    	
+    <delete id="delete">
+    	DELETE FROM crochet
+		WHERE cro_id=#{croId};
+    </delete>
 	
 </mapper>

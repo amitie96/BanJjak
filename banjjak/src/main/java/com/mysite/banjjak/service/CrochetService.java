@@ -13,6 +13,10 @@ public interface CrochetService {
 
 	List<Crochet> myCroList(User user);
 
-	Crochet findById(int croId);
+	Crochet findById(String croId);
+
+	void update(Crochet crochet);
+
+	void delete(Crochet crochet);
 
 }

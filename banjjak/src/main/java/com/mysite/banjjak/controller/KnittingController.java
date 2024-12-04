@@ -82,8 +82,53 @@ public class KnittingController {
 	    return "knitting/detail"; 
 	}
 	
+	@GetMapping("/edit/{knitId}")
+	public String edit(@SessionAttribute("userInfo") User user, @PathVariable int knitId, Knitting knitting, Model model) {
+		Knitting edit = knittingService.findById(knitId);
+		model.addAttribute("knitting", edit);
+		
+		 List<Knitting> knittingList = knittingService.findAll(knitting);
+		 model.addAttribute("knittingList", knittingList);
+		 		
+		return "knitting/edit";
+	}
 	
+	@PostMapping("/edit/{knitId}")
+	public String update(@SessionAttribute("userInfo") User user, @PathVariable int knitId, Knitting knitting, MultipartFile uploadFile, Model model) {
+		Knitting edit = knittingService.findById(knitId);
+		model.addAttribute("knitting", edit);
+				
+		if(!uploadFile.isEmpty()) {
+			String knitFilename = uploadFile.getOriginalFilename();
+			String knitUuid = UUID.randomUUID().toString();
+			
+			try {
+				uploadFile.transferTo(new File("D:/upload/knitting/" + knitUuid + "_" + knitFilename));
+				knitting.setKnitFilename(knitFilename);
+				knitting.setKnitUuid(knitUuid);
+				
+			} catch (Exception e) {
+				return "redirect:/knitting/edit/{knitId}";
+			}
+		}
+		
+		knittingService.update(knitting);
+		
+		
+		return "redirect:/mypage/list";
+		
+	}
 	
+	@GetMapping("/delete/{knitId}")
+	public String delete(@SessionAttribute("userInfo") User user, @PathVariable int knitId, Knitting knitting, MultipartFile uploadFile, Model model) {
+		Knitting edit = knittingService.findById(knitId);
+		model.addAttribute("knitting", edit);
+		
+		knittingService.delete(knitting);
+		
+		
+		return "redirect:/mypage/list";
+	}
 }
 
 

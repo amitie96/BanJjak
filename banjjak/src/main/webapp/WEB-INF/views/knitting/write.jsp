@@ -124,13 +124,13 @@
    
     <form:form method="post" modelAttribute="write" enctype="multipart/form-data">
     <div class="input-container title">
-        <label for="title">제목</label>
-        <input type="text" id="knitTitle" name="knitTitle" class="input-block" placeholder="제목을 입력하세요" autofocus required >
+        <label for="knit_title">제목</label>
+        <input type="text" id="knitTitle" name="knit_title" class="input-block" placeholder="제목을 입력하세요" autofocus required >
     </div>
 
     <div class="input-container difficulty">
-        <label for="difficulty">난이도</label>
-        <select id="knitRate" name="knitRate" class="input-block">
+        <label for="knitRate">난이도</label>
+        <select id="knitRate" name="knit_rate" class="input-block">
             <option value="★">★</option>
             <option value="★★">★★</option>
             <option value="★★★">★★★</option>
@@ -147,8 +147,8 @@
     </div>
 
     <div class="writing-block">
-        <label for="content">내용</label>
-        <textarea id="knitContent" name="knitContent" class="input-block" placeholder="내용을 입력하세요" rows="10"></textarea>
+        <label for="knit_content">내용</label>
+        <textarea id="knitContent" name="knit_content" class="input-block" placeholder="내용을 입력하세요" rows="10"></textarea>
     </div>
 
     <div class="submit-button">

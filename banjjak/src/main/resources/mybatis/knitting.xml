@@ -20,9 +20,24 @@
     </select>
     
     <select id="myKnitList" resultType="knitting">
-		SELECT KNIT_TITLE FROM knitting
+		SELECT KNIT_ID, KNIT_TITLE FROM knitting
 		WHERE USERID = #{userId} 
 	</select>
+	
+	<update id="update">
+		UPDATE knitting
+		   SET 	knit_title = #{knitTitle}
+        	  , knit_content = #{knitContent}
+              , knit_rate = #{knitRate}
+              , knit_uuid = #{knitUuid}
+              , knit_filename = #{knitFilename}
+	     WHERE knit_id=#{knitId};
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM knitting
+		WHERE knit_id=#{knitId};
+	</delete>
     
     
 </mapper>

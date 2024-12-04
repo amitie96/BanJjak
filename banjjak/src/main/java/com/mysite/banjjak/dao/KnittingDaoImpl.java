@@ -39,6 +39,16 @@ public class KnittingDaoImpl implements KnittingDao {
 		return sql.selectList("knitting.myKnitList", user);
 	}
 
+	@Override
+	public void update(Knitting knitting) {
+		sql.update("knitting.update", knitting);	
+		
+	}
+
+	@Override
+	public void delete(Knitting knitting) {
+		sql.delete("knitting.delete", knitting);			
+	}
 
 	
 }
