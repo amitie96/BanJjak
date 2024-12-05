@@ -4,174 +4,286 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>Crochet</title>
-	<link rel="stylesheet" href="/resources/css/styles.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>BanJjak</title>
+    <link rel="stylesheet" href="/resources/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
-    
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	
 <style>
 
- body {
-            font-family: 'IBM Plex Sans KR', sans-serif;
-            margin: 0;
+	body{
+		font-family: 'IBM Plex Sans KR', sans-serif; /* 글씨체 적용 */
+		}
+	
+	.mypage-style {
+            margin: 10px 0; /* 각 요소 간격 */
+            text-align: center; /* 중앙 정렬 */
+        }
+
+        .mypage-style h3 {
+            margin-bottom: 40px;
+            font-size: 24px; /* 글씨 크기 증가 */
+            font-family: 'IBM Plex Sans KR', sans-serif; /* 글씨체 적용 */
+        }
+
+        .mypage-style a {
+            text-decoration: none; /* 밑줄 제거 */
+            font-family: 'IBM Plex Sans KR', sans-serif; /* 글씨체 적용 */
+            color: black; /* 링크 색상 지정 */
+        }
+
+        .mypage-style a:hover {
+            color: gray; /* 마우스 오버 시 색상 변경 */
+        }
+
+        .mypage-style p {
+            margin: 5px 0; /* 라벨 간격 */
+            font-family: 'IBM Plex Sans KR', sans-serif; /* 글씨체 적용 */
+        }
+
+        .mypage-style input {
+            width: 200px; /* 입력 칸 크기 */
+            padding: 5px; /* 입력 칸 내부 여백 */
+            font-size: 14px;
+        }
+
+        .mypage-style button {
+            border: none;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            background: none;
+            cursor: pointer;
         }
 
-        .container {
-            padding: 30px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+        .mypage-style button img {
+            display: block;
+            transition: transform 0.2s ease, filter 0.2s ease;
         }
 
-        .search-bar {
-            margin: 20px 0;
+        .mypage-style button:hover img {
+            transform: scale(1.01);
+            filter: brightness(1.2);
+        }
+
+        .mypage {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .mypage ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mypage li {
+            margin-bottom: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .search-bar input[type="text"] {
-            padding: 10px;
-            width: 300px;
-            border-radius: 30px;
-            border: 1px solid #ddd;
-            padding-right: 40px;
-        }
-
-        .search-bar button {
-            margin-left: -40px;
-            background: none;
-            border: none;
-            font-size: 18px;
-            color: #888;
-            cursor: pointer;
-        }
-
-        .options {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 18px;
-            margin: 20px 0;
-            padding: 0 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .sort-options {
-            display: flex;
-            gap: 15px;
-        }
-
-        .sort-options a {
-            color: #666;
+        .mypage a {
             text-decoration: none;
+            color: #4CAF50;
             font-weight: bold;
+            font-size: 18px;
         }
 
-        .sort-options a:hover {
-            color: #ffb3a5;
+        .mypage a:hover {
+            text-decoration: underline;
         }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1100px; 
-            margin: 0 auto;
-            padding: 20px;
+        .manage-section {
+            text-align: center;
+            margin: 20px 0;
         }
 
-        .gallery-item {
-            background-color: #fff; 
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .category {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 20px 0;
+        }
+
+
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 2px dashed #f7a486;
+            background-color: #FFE7DC;
             padding: 20px;
             text-align: center;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            cursor: pointer;
+            box-sizing: border-box;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
         }
 
-        .gallery-item:hover {
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+
+        .pagination {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
-        .gallery-item a {
-            display: block; 
-            text-decoration: none; 
-            color: inherit; 
+        .pagination a {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
         }
 
-        .gallery-item img {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px; 
+        .pagination a:hover {
+            background-color: #45a049;
         }
 
-        .gallery-item h3 {
-            font-size: 18px;
-            margin: 15px 0 10px;
-            font-weight: bold;
+        .pagination .disabled {
+            background-color: #ddd;
+            color: #aaa;
         }
+        .pagination button{
+        	background-color: #ffb3a5;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        }
+        .pagination button:hover{
+        	background-color: #ff8878;
+        }
+            .mypage-button {
+        text-align: center;
+        margin-top: 20px;
+    }
 
-        .gallery-item .info, .gallery-item .icons {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 10px;
-        }
+    .mypage-button button {
+        padding: 10px 20px;
+        background-color: #ffb3a5;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
 
-        .gallery-item .icons {
-            color: #f5a623; /* 난이도 */
-        }
-
-        .gallery-item .info {
-            color: #888; /* 작성자 */
-        }
-</style>
+    .mypage-button button:hover {
+        background-color: #ff8878;
+    }
+    .mypagee{
+    padding: 60px 20px;
+        max-width: 850px; /* 기존보다 약간 넓게 설정 */
+        margin: 50px auto;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .mypageee{
+    padding: 50px 20px;
+        max-width: 630px; /* 기존보다 약간 넓게 설정 */
+        margin: 50px auto;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    </style>
     
+    <style type="text/css">
+    	.hide {
+    		display: none;
+    	}
+    </style>
 </head>
 <body>
 
-
 <jsp:include page="../layouts/header.jsp"/>
 
-<div class="container">
+<div class="mypagee">
+<!-- 내 글 관리 섹션 -->
+<div class="manage-section">
+    <h3>내 글 관리</h3>
 
-    <img src="../resources/images/crochet.png" alt="코바늘" width="250" height="100">
-   
+    <div class="category">
+        <!-- 대바늘 글 목록 -->
+        <div>
+            <label>대바늘</label>
+            <ul class="box" id="knitting-list">
+                <li class="empty">데이터 없음</li>
+            </ul>
+		     <div class="pagination">
+		        <button id="knit-prev-page" disabled>&lt;</button>
+		        <button id="knit-next-page">&gt;</button>
+		  	</div>
+        </div>
+
+        <!-- 코바늘 글 목록 -->
+        <div>
+            <label>코바늘</label>
+            <ul class="box" id="crochet-list">
+            	<li class="empty">데이터 없음</li>
+            </ul>
+            <div class="pagination">
+		        <button id="cro-prev-page" disabled>&lt;</button> <!-- id값은 고유해야함 -->
+		        <button id="cro-next-page" >&gt;</button>
+		  	</div>
+        </div>
+    </div>
+ 
 </div>
 
-<div class="search-bar">
-        <input type="text" placeholder="제목을 입력하세요">
-        <button>&#128269;</button>
-    </div>
+<div class="mypageee">
 
-<div class="options">
-    <a href="write" class="share-option"><img src="../resources/images/pencil.png" alt="펜" width="20"> 나의 도안 공유하기</a>
-    <div class="sort-options">
-        <a href="?sort=latest">최신순</a>
-        <a href="?sort=popular">인기순</a>
-    </div>
-</div>
+<!-- 내 정보 수정 섹션 -->
 
-   <div class="gallery">
-	<c:forEach var="crochet" items="${crochetList}">
-	    <div class="gallery-item">
-	    <a href="/crochet/detail/${crochet.croId}">
-	    	<img src="/upload/crochet/${crochet.croUuid}_${crochet.croFilename}">
-	        <h3>${crochet.croTitle}</h3>
-	        <div class="info">${crochet.nickname}</div>
-	        <div class="icons">난이도: ${crochet.croRate}</div>
-	       </a>
-	    </div>
-	</c:forEach>
+<div class="mypage-style">
+    <h3>내 정보 수정</h3>
+    <form action="/mypage/list" method="POST">
+	        <div class="mypage-style">
+	            <p>아이디</p>
+	            <input type="text" id="userId" name="userId" value="${userInfo.userId}" readonly required>
+	        </div>
+	        <div class="mypage-style">
+	            <p>비밀번호</p>
+	            <input type="password" id="password" name="password" placeholder="새 비밀번호를 입력해주세요" value="${userInfo.password}">
+	        </div>
+	        <div class="mypage-style">
+	            <p>이름</p>
+	            <input type="text" id="username" name="username" value="${userInfo.username}" maxlength="15" required>
+	        </div>
+	        <div class="mypage-style">
+	            <p>닉네임</p>
+	            <input type="text" id="nickname" name="nickname" value="${userInfo.nickname}" maxlength="15" required>
+	        </div>
+	        <div class="mypage-style">
+	            <p>이메일</p>
+	            <input type="email" id="user-mail" name="email" value="${userInfo.email}" maxlength="255" required>
+	        </div>
+	        <div class="mypage-button">
+	            <button type="submit">수정하기</button>
+	        </div>
+    </form>
 	</div>
-	
+</div>
+</div>
+    
+    
+
+
 <jsp:include page="../layouts/footer.jsp"/>
+
+<script type="text/javascript" src="/resources/js/mypage/list.js"></script>
+
 </body>
 </html>
