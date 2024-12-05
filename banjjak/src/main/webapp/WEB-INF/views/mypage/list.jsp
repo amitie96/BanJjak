@@ -12,21 +12,63 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	
 <style>
+
+	body{
+		font-family: 'IBM Plex Sans KR', sans-serif; /* 글씨체 적용 */
+		}
+	
+	.mypage-style {
+            margin: 10px 0; /* 각 요소 간격 */
+            text-align: center; /* 중앙 정렬 */
+        }
+
+        .mypage-style h3 {
+            margin-bottom: 40px;
+            font-size: 24px; /* 글씨 크기 증가 */
+            font-family: 'IBM Plex Sans KR', sans-serif; /* 글씨체 적용 */
+        }
+
+        .mypage-style a {
+            text-decoration: none; /* 밑줄 제거 */
+            font-family: 'IBM Plex Sans KR', sans-serif; /* 글씨체 적용 */
+            color: black; /* 링크 색상 지정 */
+        }
+
+        .mypage-style a:hover {
+            color: gray; /* 마우스 오버 시 색상 변경 */
+        }
+
+        .mypage-style p {
+            margin: 5px 0; /* 라벨 간격 */
+            font-family: 'IBM Plex Sans KR', sans-serif; /* 글씨체 적용 */
+        }
+
+        .mypage-style input {
+            width: 200px; /* 입력 칸 크기 */
+            padding: 5px; /* 입력 칸 내부 여백 */
+            font-size: 14px;
+        }
+
+        .mypage-style button {
+            border: none;
+            padding: 0;
+            background: none;
+            cursor: pointer;
+        }
+
+        .mypage-style button img {
+            display: block;
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+
+        .mypage-style button:hover img {
+            transform: scale(1.01);
+            filter: brightness(1.2);
+        }
+
         .mypage {
             text-align: center;
             margin-top: 20px;
-        }
-
-        .manage-section {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .category {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 20px 0;
         }
 
         .mypage ul {
@@ -36,22 +78,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        .box {
-            width: 300px;
-            height: 200px;
-            border: 2px solid #FFFF99;
-            background-color: #FFFFE0;
-            padding: 20px;
-            text-align: center;
-            box-sizing: border-box;
-            border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 5px;
         }
 
         .mypage li {
@@ -71,6 +97,36 @@
         .mypage a:hover {
             text-decoration: underline;
         }
+
+        .manage-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .category {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 20px 0;
+        }
+
+
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 2px dashed #f7a486;
+            background-color: #FFE7DC;
+            padding: 20px;
+            text-align: center;
+            box-sizing: border-box;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+        }
+
 
         .pagination {
             margin-top: 20px;
@@ -95,6 +151,53 @@
             background-color: #ddd;
             color: #aaa;
         }
+        .pagination button{
+        	background-color: #ffb3a5;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        }
+        .pagination button:hover{
+        	background-color: #ff8878;
+        }
+            .mypage-button {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .mypage-button button {
+        padding: 10px 20px;
+        background-color: #ffb3a5;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .mypage-button button:hover {
+        background-color: #ff8878;
+    }
+    .mypagee{
+    padding: 60px 20px;
+        max-width: 850px; /* 기존보다 약간 넓게 설정 */
+        margin: 50px auto;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .mypageee{
+    padding: 50px 20px;
+        max-width: 630px; /* 기존보다 약간 넓게 설정 */
+        margin: 50px auto;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
     </style>
     
     <style type="text/css">
@@ -107,9 +210,10 @@
 
 <jsp:include page="../layouts/header.jsp"/>
 
+<div class="mypagee">
 <!-- 내 글 관리 섹션 -->
 <div class="manage-section">
-    <h1>내 글 관리</h1>
+    <h3>내 글 관리</h3>
 
     <div class="category">
         <!-- 대바늘 글 목록 -->
@@ -154,127 +258,49 @@
             <a href="?page=${currentPage + 1}">다음 &gt;</a>
         </c:if>
     </div>
-
 </div>
+
+<div class="mypageee">
 
 <!-- 내 정보 수정 섹션 -->
-<div class="mypage">
-    <h1>내 정보 수정</h1>
-    <br>
-    <!-- 사용자 정보 수정 폼 -->
+
+<div class="mypage-style">
+    <h3>내 정보 수정</h3>
     <form action="/mypage/list" method="POST">
-        <ul>
-            <li>
-                <label for="userid">아이디</label>
-                <input type="text" id="userId" name="userId" value="${userInfo.userId}" readonly required>
-            </li>
-            <li>
-                <label for="userpassword">비밀번호</label>
-                <input type="password" id="userpassword" name="password" placeholder="새 비밀번호" value="${userInfo.password}">
-            </li>
-            <li>
-                <label for="username">이름</label>
-                <input type="text" id="username" name="username" value="${userInfo.username}" maxlength="15" required>
-            </li>
-            <li>
-                <label for="nickname">닉네임</label>
-                <input type="text" id="nickname" name="nickname" value="${userInfo.nickname}" maxlength="15" required>
-            </li>
-            
-            <li>
-                <label for="user-mail">이메일</label>
-                <input type="email" id="user-mail" name="email" value="${userInfo.email}" maxlength="255" required>
-            </li>
-        </ul>
-        </form>
-    <br>
-    <p>　<button type="submit">수정하기</button></p>
-    <br><br><br>
+	        <div class="mypage-style">
+	            <p>아이디</p>
+	            <input type="text" id="userId" name="userId" value="${userInfo.userId}" readonly required>
+	        </div>
+	        <div class="mypage-style">
+	            <p>비밀번호</p>
+	            <input type="password" id="password" name="password" placeholder="새 비밀번호를 입력해주세요" value="${userInfo.password}">
+	        </div>
+	        <div class="mypage-style">
+	            <p>이름</p>
+	            <input type="text" id="username" name="username" value="${userInfo.username}" maxlength="15" required>
+	        </div>
+	        <div class="mypage-style">
+	            <p>닉네임</p>
+	            <input type="text" id="nickname" name="nickname" value="${userInfo.nickname}" maxlength="15" required>
+	        </div>
+	        <div class="mypage-style">
+	            <p>이메일</p>
+	            <input type="email" id="user-mail" name="email" value="${userInfo.email}" maxlength="255" required>
+	        </div>
+	        <div class="mypage-button">
+	            <button type="submit">수정하기</button>
+	        </div>
+    </form>
+	</div>
 </div>
+</div>
+    
+    
+
 
 <jsp:include page="../layouts/footer.jsp"/>
 
 <script type="text/javascript" src="/resources/js/mypage/list.js"></script>
 
-<script>
-	
-
-/*
-        $(document).ready(function () {
-            // 대바늘과 코바늘 데이터를 서버에서 전달받음
-            const knittingData = ${myKnitList};
-            const crochetData = ${myCroList};
-            const pageSize = 5; // 한 페이지에 표시할 글 수
-
-            let currentKnittingPage = 1;
-            let currentCrochetPage = 1;
-
-            // 페이지 데이터 렌더링 함수
-            function renderList(data, page, targetList) {
-                const startIndex = (page - 1) * pageSize;
-                const endIndex = startIndex + pageSize;
-
-                // 선택된 페이지 데이터 추출
-                const pageData = data.slice(startIndex, endIndex);
-     
-                // 리스트 초기화 후 데이터 렌더링
-                $(targetList).empty();
-                pageData.forEach(item => {
-                    $(targetList).append(
-                        `<li><a href="../detail.jsp?id=${item.id}">${item.title}</a></li>`
-                    );
-                });
-            }
-
-            // 버튼 상태 업데이트
-            function updateButtons(data, page, prevButton, nextButton) {
-                $(prevButton).prop("disabled", page === 1);
-                $(nextButton).prop("disabled", page * pageSize >= data.length);
-            }
-
-            // 초기 데이터 렌더링
-            renderList(knittingData, currentKnittingPage, "#knitting-list");
-            renderList(crochetData, currentCrochetPage, "#crochet-list");
-            updateButtons(knittingData, currentKnittingPage, "#prev-knitting", "#next-knitting");
-            updateButtons(crochetData, currentCrochetPage, "#prev-crochet", "#next-crochet");
-
-            // 대바늘 이전 버튼 클릭
-            $("#prev-knitting").click(function () {
-                if (currentKnittingPage > 1) {
-                    currentKnittingPage--;
-                    renderList(knittingData, currentKnittingPage, "#knitting-list");
-                    updateButtons(knittingData, currentKnittingPage, "#prev-knitting", "#next-knitting");
-                }
-            });
-
-            // 대바늘 다음 버튼 클릭
-            $("#next-knitting").click(function () {
-                if (currentKnittingPage * pageSize < knittingData.length) {
-                    currentKnittingPage++;
-                    renderList(knittingData, currentKnittingPage, "#knitting-list");
-                    updateButtons(knittingData, currentKnittingPage, "#prev-knitting", "#next-knitting");
-                }
-            });
-
-            // 코바늘 이전 버튼 클릭
-            $("#prev-crochet").click(function () {
-                if (currentCrochetPage > 1) {
-                    currentCrochetPage--;
-                    renderList(crochetData, currentCrochetPage, "#crochet-list");
-                    updateButtons(crochetData, currentCrochetPage, "#prev-crochet", "#next-crochet");
-                }
-            });
-
-            // 코바늘 다음 버튼 클릭
-            $("#next-crochet").click(function () {
-                if (currentCrochetPage * pageSize < crochetData.length) {
-                    currentCrochetPage++;
-                    renderList(crochetData, currentCrochetPage, "#crochet-list");
-                    updateButtons(crochetData, currentCrochetPage, "#prev-crochet", "#next-crochet");
-                }
-            });
-        });
-*/
-    </script>
 </body>
 </html>

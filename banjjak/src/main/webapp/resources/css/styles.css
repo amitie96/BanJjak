@@ -6,7 +6,7 @@ header {
        justify-content: space-between; /* 양쪽 끝으로 정렬 */
        align-items: center; /* 세로 정렬을 중앙으로 맞춤 */
        padding: 13px;
-       background-color: #FFEFD5; /* 필요에 따라 배경색 추가 */
+       background-color: #FFEFD5;
    }
    
 header .logo img {
@@ -55,4 +55,10 @@ div p {
 input {
 	flex-grow: 1;
 	max-width: 250px;
+}
+
+/* body */
+
+body{
+	background-color:#FFFCF7;
 }

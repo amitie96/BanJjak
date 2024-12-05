@@ -84,7 +84,7 @@ public class CrochetController {
 	}
 	
 	@GetMapping("/edit")
-	public String edit(@SessionAttribute("userInfo") User user,@RequestParam("croId") int croId, Model model, Crochet crochet) {
+	public String edit(@SessionAttribute("userInfo") User user, @RequestParam("croId") int croId, Model model, Crochet crochet) {
 		Crochet edit = crochetService.findById(croId);
 		model.addAttribute("crochet", edit);
 		

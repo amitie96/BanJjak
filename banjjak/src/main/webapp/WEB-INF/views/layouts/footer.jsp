@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 
 <footer>
-    <p>&copy; 2024 My BanJjak | <a href="#">공지사항</a></p>
-    <p>문의: DM으로 부탁드립니다 🙌</p>
+    <p>&copy; 2024 BanJjak | 우정 혜수 예랑</p>
+    <p>문의: Instagram DM으로 부탁드립니다 🙌</p>
   </footer>

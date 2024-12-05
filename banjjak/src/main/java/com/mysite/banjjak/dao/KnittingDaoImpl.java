@@ -27,11 +27,7 @@ public class KnittingDaoImpl implements KnittingDao {
 
 	@Override
 	public Knitting findById(int knitId) {
-		List<Knitting> knittingList = sql.selectList("knitting.detail", knitId);
-		if(knittingList != null && !knittingList.isEmpty()) {
-			return knittingList.get(0);
-		}
-		return null;
+		return sql.selectOne("knitting.detail", knitId);
 	}
 	
 	@Override
